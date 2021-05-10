@@ -1,5 +1,9 @@
 # BDD-Semana-5
 
+## Generalidades
+
+- Para la ejecución de las pruebas se creó una instancia en la URL: https://e61b4ef2fb35.ngrok.io/ghost
+
 ## Escenarios de prueba y funcionalidades
 
 | **Escenarios** | **Casos de Prueba 1**                    | **Casos de Prueba 2**                      | **Casos de Prueba 3**                            | **Casos de Prueba 4**             | **Casos de Prueba 5**                                        | **Funcionalidad**                                 |
