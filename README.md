@@ -82,3 +82,5 @@ Y para correrlo sin consola gráfica:
 ## Cypress
 
 Videos de Pruebas llevadas ejecutas https://drive.google.com/drive/folders/1EfkVeCj-r-eJhLFG6MXg10zTh_uxOm3h?usp=sharing
+
+## Kraken
