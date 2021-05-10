@@ -21,7 +21,7 @@ function cambiarDesignNameSite() {
      cy.get('input').then($emberTexts => {
          cy.wrap($emberTexts.get(0)).type('Titulo Grupo', { force: true });
      });
-    cy.wait(500);
+    cy.wait(1000);
     cy.get('.view-actions').click();
-    cy.wait(500);
+    cy.wait(1000);
 }
