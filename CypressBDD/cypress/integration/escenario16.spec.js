@@ -1,9 +1,10 @@
 describe('Escenario 16: Login - Editar información general', function () {
     it('Cambio de titulo site', function () {
-        cy.visit('https://3b429be77858.ngrok.io/ghost/#/signin');
+        cy.visit('https://e61b4ef2fb35.ngrok.io/ghost/#/signin');
         Login();
         cy.wait(1000);
-        cy.visit('https://3b429be77858.ngrok.io/ghost/#/settings/general');
+        cy.visit('https://e61b4ef2fb35.ngrok.io/ghost/#/settings/general');
+        cy.wait(1000);
         cambiarTituloSite();
         cy.wait(1000);
     });
@@ -21,7 +22,7 @@ function cambiarTituloSite() {
     cy.get('button').then($ghsettact => {
         cy.get($ghsettact.get(0)).click({ force: true })
     });
-    cy.wait(1000);
+    cy.wait(4000);
     cy.get('.view-actions').click({ force: true });
-    cy.wait(1000);
+    cy.wait(4000);
 }

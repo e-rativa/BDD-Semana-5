@@ -1,11 +1,11 @@
 describe('Escenario 20: Login-logout', function () {
     it('LogOut', function () {
-        cy.visit('https://3b429be77858.ngrok.io/ghost/#/signin');
+        cy.visit('https://e61b4ef2fb35.ngrok.io/ghost/#/signin');
         Login();
         cy.wait(1000);
         LogOut();
         cy.wait(1000);
-        cy.visit('https://3b429be77858.ngrok.io/ghost/#/signout');
+        cy.visit('https://e61b4ef2fb35.ngrok.io/ghost/#/signout');
     });
 });
 

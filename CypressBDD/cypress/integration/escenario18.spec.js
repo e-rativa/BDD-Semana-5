@@ -1,12 +1,12 @@
 describe('Escenario 18: Login - Cambiar diseño de página web', function () {
     it('Cambio titulo en design', function () {
-        cy.visit('https://3b429be77858.ngrok.io/ghost/#/signin');
+        cy.visit('https://e61b4ef2fb35.ngrok.io/ghost/#/signin');
         Login();
         cy.wait(1000);
-        cy.visit('https://3b429be77858.ngrok.io/ghost/#/settings/design');
+        cy.visit('https://e61b4ef2fb35.ngrok.io/ghost/#/settings/design');
         cambiarDesignNameSite();
         cy.wait(1000);
-        cy.visit('https://3b429be77858.ngrok.io/ghost/#/site');
+        cy.visit('https://e61b4ef2fb35.ngrok.io/ghost/#/site');
     });
 });
 
@@ -21,7 +21,7 @@ function cambiarDesignNameSite() {
     cy.get('input').then($emberTexts => {
         cy.wrap($emberTexts.get(0)).type('Titulo Grupo', { force: true });
     });
-    cy.wait(1000);
+    cy.wait(4000);
     cy.get('.view-actions').click();
     cy.wait(1000);
 }

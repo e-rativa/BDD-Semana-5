@@ -8,4 +8,4 @@ Feature: Login - Configuration General
     Then I click on element having id "ember12"
     Then I click on element having css selector ".gh-mobile-nav-bar-more"
     Then I click on element having css selector ".gh-nav-bottom"
-    Then I navigate to page "https://3b429be77858.ngrok.io/ghost/#/signout"
+    Then I navigate to page "https://e61b4ef2fb35.ngrok.io/ghost/#/signout"

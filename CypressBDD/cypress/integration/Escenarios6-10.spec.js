@@ -1,4 +1,4 @@
-const urlBase = 'https://3b429be77858.ngrok.io/'
+const urlBase = 'https://e61b4ef2fb35.ngrok.io/'
 var pageTitle = ''
 var pageDescription = ''
 var tagName = ''
@@ -68,14 +68,14 @@ function createPage(title, description) {
         cy.get('textarea.gh-editor-title.ember-text-area.gh-input.ember-view').type(title)
         cy.get('.koenig-editor__editor').click()
         cy.wait(4000)
-        cy.get('a.blue.link.fw4.flex.items-center.ember-view').click({force: true})
+        cy.get('a.blue.link.fw4.flex.items-center.ember-view').click({ force: true })
 
     }
     else if (description && !title) {
         cy.get('.koenig-editor__editor').clear()
         cy.get('.koenig-editor__editor').type(description)
         cy.wait(4000)
-        cy.get('a.blue.link.fw4.flex.items-center.ember-view').click({force: true})
+        cy.get('a.blue.link.fw4.flex.items-center.ember-view').click({ force: true })
     }
     else {
         cy.get('.koenig-editor__editor').clear()
@@ -83,7 +83,7 @@ function createPage(title, description) {
         cy.get('textarea.gh-editor-title.ember-text-area.gh-input.ember-view').type(title)
         cy.get('.koenig-editor__editor').type(description)
         cy.wait(4000)
-        cy.get('a.blue.link.fw4.flex.items-center.ember-view').click({force: true})
+        cy.get('a.blue.link.fw4.flex.items-center.ember-view').click({ force: true })
     }
 }
 
@@ -96,10 +96,10 @@ function publishPage(inmediatlyPublish) {
         cy.get(".gh-post-list-title").contains('Publish scheduled page').click({ force: true });
         cy.get("div.gh-btn.gh-btn-outline.gh-publishmenu-trigger.ember-basic-dropdown-trigger.ember-view").click()
         cy.get("div.gh-publishmenu-radio-label").contains("Schedule it for later").click()
-      }
-      cy.get("button.gh-btn.gh-btn-blue.gh-publishmenu-button.gh-btn-icon.ember-view").click()
-      cy.wait(4000)
-      cy.get('a.blue.link.fw4.flex.items-center.ember-view').click({force: true})
+    }
+    cy.get("button.gh-btn.gh-btn-blue.gh-publishmenu-button.gh-btn-icon.ember-view").click()
+    cy.wait(4000)
+    cy.get('a.blue.link.fw4.flex.items-center.ember-view').click({ force: true })
 
 }
 
