@@ -49,17 +49,16 @@ npm install
 
 ## Correr el test de cypress
 
-Para correr el test se ejecuta el siguiente comando si se requiere una consola gráfica:
 
-```bash
-./node_modules/cypress/bin/cypress open
-```
+Para correr el test se ejecuta el siguiente comando para abrir la interfaz gráfica:
 
-Y para correrlo sin consola gráfica:
+ ```bash
+ ./node_modules/cypress/bin/cypress open
+ ```
+ 
+ Luego de esto se puestra una lista con cada especificación, **por favor ejecutar una a una**
 
-```bash
-./node_modules/cypress/bin/cypress run --headless
-```
+
 # Pros y contras de herramientas usadas
 
 ## Cypress
