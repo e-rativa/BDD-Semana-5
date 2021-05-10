@@ -58,3 +58,26 @@ Y para correrlo sin consola gráfica:
 ```bash
 ./node_modules/cypress/bin/cypress run --headless
 ```
+### Pros y contras de herramientas usadas
+
+  ##Cypress
+
+  #Pros
+- Es mas rapido en la ejecucion de todas las pruebas vs Kraken 
+- Es más rápido, ya que corre en memoria y no requiere de toda la preparación que tienen los navegadores gráficos.
+- Se pueden tomar screenshots o vídeos como si fuera una prueba automatizada normal.
+- Facilidad para conocer las propiedades de los elementos con el cual se quiere interactuar con el selector de elementos.
+
+  #Contras
+- Es complicado interactuar con variables que se procesan por debajo de la aplicación, que no están a la vista.
+- No tiene como para guardar un estado previo o un recorrido ya realizado, ya que se debe esperar que se ejecuten las pruebas previas para llegar un punto donde se quiere evaluar con detenimiento.
+- Puede ser algo demorado desarrollar las pruebas para un módulo que podría considerarse pequeño, en términos de proporción.
+
+  ##Kraken
+
+  #Pros
+- Al tener un lenguaje basado en Gherkin, su comprensión en codigo es mas entendible que en otro lenguaje.
+- Es mas lento en la ejecucion de todas las pruebas vs Cypress.
+
+  #Contras
+- Falta bastante documentacion en la implementacion del lenguaje.
