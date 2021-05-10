@@ -98,19 +98,19 @@ https://mally.stanford.edu/~sr/computing/basic-unix.html.
 
 1​. Creamos una máquina virtual de VirtualBox en cual Kraken esta instalado y funcionando. La puede encontrar en la siguiente url y la clave es "pruebas": https://zenodo.org/record/4739209/files/Ubuntu20Light_copy.vdi?download=1
 
- 1.1. Ejecuten el entorno como Administradores para evitar errores
+1.1. Ejecuten el entorno como Administradores para evitar errores
 
 2​. En caso de querer ejecutar Kraken por su cuenta, se le recomienda usar Windows. Ejecuten el entorno como Administradores para evitar errores
 
- 2​.1. Ejecuten el entorno como Administradores para evitar errores
+2​.1. Ejecuten el entorno como Administradores para evitar errores
 
- 2.2. La version de ruby: cualquiera entre 2.2.X y 2.7.2
+2.2. La version de ruby: cualquiera entre 2.2.X y 2.7.2
 
- 2.3. Asegurense de tener un chromium/chrom referenciado en sus variables path (va a fallar en la creacion de carpetas)
+2.3. Asegurense de tener un chromium/chrom referenciado en sus variables path (va a fallar en la creacion de carpetas)
 
- 2.4. Para el error too many login attempts en kraken:
+2.4. Para el error too many login attempts en kraken:
 
-  2.4.1. Opción 1: ​Crear un archivo config.development.json en el directorio raíz del proyecto y añadir:
+2.4.1. Opción 1: ​Crear un archivo config.development.json en el directorio raíz del proyecto y añadir:
 
 ```bash
 {
@@ -125,7 +125,7 @@ https://mally.stanford.edu/~sr/computing/basic-unix.html.
 }
 ```
 
-  2.4.2. Opción 2: Vaciar la carpeta brute de la db.
+2.4.2. Opción 2: Vaciar la carpeta brute de la db.
 
 3.  En caso de hacer uso de Ubuntu puede seguir los pasos que se encuentran en el siguiente archivo: https://bit.ly/3362dRl Fueron los que seguimos para la creación de la máquina virtual del punto 1.
 
