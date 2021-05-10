@@ -36,7 +36,7 @@ Se necesita instalar mínino la versión 10 de node js, este trae npm necesario 
 Primero navegar a la carpeta CypressBDD/cypress con el comando de navegación por consola
 
 ```bash
-cd CypressBDD/cypress
+cd CypressBDD/
 ```
 
 Para instalar las dependencias del proyecto se corre el siguiente comando:
