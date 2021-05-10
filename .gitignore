@@ -1,1 +1,4 @@
 CypressBDD/node_modules
+/.DS_Store
+CypressBDD/cypress/screenshots/*
+CypressBDD/cypress/videos/*
