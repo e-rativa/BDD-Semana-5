@@ -5,6 +5,7 @@ describe('Escenario 16: Login - Editar información general', function () {
         cy.wait(1000);
         cy.visit('https://894e1cdea8aa.ngrok.io/ghost/#/settings/general');
         cambiarTituloSite();
+        cy.wait(1000);
     });
 });
 
@@ -20,7 +21,7 @@ function cambiarTituloSite() {
     cy.get('button').then($ghsettact => {
         cy.get($ghsettact.get(0)).click({ force: true })
     });
-    cy.wait(500);
+    cy.wait(1000);
     cy.get('.view-actions').click({ force: true });
-    cy.wait(500);
+    cy.wait(1000);
 }
