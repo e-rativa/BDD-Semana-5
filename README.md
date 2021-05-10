@@ -1,5 +1,7 @@
 # BDD-Semana-5
 
+## Escenarios de prueba y funcionalidades
+
 | **Escenarios** | **Casos de Prueba 1**                    | **Casos de Prueba 2**                      | **Casos de Prueba 3**                            | **Casos de Prueba 4**             | **Casos de Prueba 5**                                        | **Funcionalidad**                                 |
 | -------------- | ---------------------------------------- | ------------------------------------------ | ------------------------------------------------ | --------------------------------- | ------------------------------------------------------------ | ------------------------------------------------- |
 | Escenario 1    | Comprobación de datos vacíos             | Datos Erróneos                             | Datos Correctos                                  |                                   |                                                              | Login                                             |
@@ -81,6 +83,8 @@ Y para correrlo sin consola gráfica:
 # Resultados Obtenidos
 ## Cypress
 
-Videos de Pruebas llevadas ejecutas https://drive.google.com/drive/folders/1EfkVeCj-r-eJhLFG6MXg10zTh_uxOm3h?usp=sharing
+Videos de pruebas llevadas ejecutas https://drive.google.com/drive/folders/1EfkVeCj-r-eJhLFG6MXg10zTh_uxOm3h?usp=sharing
 
 ## Kraken
+
+Reportes de pruebas llevadas ejecutas https://drive.google.com/drive/folders/1Dz_bIWW4pGVyRGRrt0ZLNEZZWybt--3e?usp=sharing
