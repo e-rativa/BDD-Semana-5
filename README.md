@@ -29,6 +29,8 @@
 | Escenario 19   | Login con datos correctos                | Ir a las opciones MORE                     | Ir a las opciones LABS                           | Habilitar miembros                | Ir a la página de MEMBERS                                    | Login-Habilitar miembros                          |
 | Escenario 20   | Login con datos correctos                | Ir a las opciones MORE                     | Ir a opciones de perfil                          | Logout                            |                                                              | Login-logout                                      |
 
+---
+
 # Cypress BDD test
 
 BDD test para entrega semana 5 calificada de pruebas automatizadas MISO.
@@ -53,37 +55,110 @@ npm install
 
 ## Correr el test de cypress
 
-
 Para correr el test se ejecuta el siguiente comando para abrir la interfaz gráfica:
 
- ```bash
- ./node_modules/cypress/bin/cypress open
- ```
- 
- Luego de esto se puestra una lista con cada especificación, **por favor ejecutar una a una**
+```bash
+./node_modules/cypress/bin/cypress open
+```
 
+Luego de esto se puestra una lista con cada especificación, **por favor ejecutar una a una**
+
+---
+
+# Kraken BDD test
+
+BDD test para entrega semana 5 calificada de pruebas automatizadas MISO.
+
+## Requerimientos
+
+Recomendación si no ha trabajado con consola, empiece a familiarizarse con los comandos básicos. Una lista de comandos básicos UNIX los puede encontrar:
+
+https://mally.stanford.edu/~sr/computing/basic-unix.html.
+
+## Instalar las dependencias del proyecto
+
+1​. Creamos una máquina virtual de VirtualBox en cual Kraken esta instalado y funcionando. La puede encontrar en la siguiente url y la clave es "pruebas": https://zenodo.org/record/4739209/files/Ubuntu20Light_copy.vdi?download=1
+
+1.1. Ejecuten el entorno como Administradores para evitar errores
+1​.2. Esta máquina virtual pesa bastante! no deje su descarga para el último momento de la semana!
+
+2​. En caso de querer ejecutar Kraken por su cuenta, se le recomienda usar Windows. Ejecuten el entorno como Administradores para evitar errores
+2​.1. Ejecuten el entorno como Administradores para evitar errores
+2.2. La version de ruby: cualquiera entre 2.2.X y 2.7.2
+2.3. Asegurense de tener un chromium/chrom referenciado en sus variables path (va a fallar en la creacion de carpetas)
+2.4. Para el error too many login attempts en kraken:
+2.4.1. Opción 1: ​Crear un archivo config.development.json en el directorio raíz del proyecto y añadir:
+
+```bash
+{
+ "spam": {
+   "global_block": {
+     "freeRetries": 100000000
+   },
+   "user_login": {
+     "freeRetries": 100000000
+   }
+ }
+}
+```
+
+2.4.2. Opción 2: Vaciar la carpeta brute de la db.
+
+3. En caso de hacer uso de Ubuntu puede seguir los pasos que se encuentran en el siguiente archivo: https://bit.ly/3362dRl Fueron los que seguimos para la creación de la máquina virtual del punto 1.
+
+## Configuración del ambiente
+
+Kraken necesita reconocer los dispositivos que representan a cada usuario en la prueba que
+se va a ejecutar, ya sean dispositivos Android (en caso de que se prueben aplicaciones móviles),
+o navegadores web (en caso de que se prueben aplicaciones web).
+Para esto, es necesario que se copie el archivo de **llamado kraken_mobile_settings.json** que se encuentra en la ruta
+**kraken/llamado kraken_mobile_settings.json**.
+Este archivo también se puede generar automáticamente con la utilidad de línea de comandos de kraken-mobile. Ejecute el siguiente comando:
+
+```bash
+kraken-mobile setup
+```
+
+**Por favor si lo hace por este comando crear 5 usuarios y todos web**
+
+## Correr las pruebas kraken
+
+En el ambiente de kraken previamente configurado por favor correr el siguiente comando:
+
+```bash
+bundle exec kraken-mobile run
+```
 
 # Pros y contras de herramientas usadas
 
 ## Cypress
+
 ### Pros
-- Es mas rapido en la ejecucion de todas las pruebas vs Kraken 
+
+- Es mas rapido en la ejecucion de todas las pruebas vs Kraken
 - Es más rápido, ya que corre en memoria y no requiere de toda la preparación que tienen los navegadores gráficos.
 - Se pueden tomar screenshots o vídeos como si fuera una prueba automatizada normal.
 - Facilidad para conocer las propiedades de los elementos con el cual se quiere interactuar con el selector de elementos.
+
 ### Contras
+
 - Es complicado interactuar con variables que se procesan por debajo de la aplicación, que no están a la vista.
 - No tiene como para guardar un estado previo o un recorrido ya realizado, ya que se debe esperar que se ejecuten las pruebas previas para llegar un punto donde se quiere evaluar con detenimiento.
 - Puede ser algo demorado desarrollar las pruebas para un módulo que podría considerarse pequeño, en términos de proporción.
 
 ## Kraken
+
 ### Pros
+
 - Al tener un lenguaje basado en Gherkin, su comprensión en codigo es mas entendible que en otro lenguaje.
 - Es mas lento en la ejecucion de todas las pruebas vs Cypress.
+
 ### Contras
+
 - Falta bastante documentacion en la implementacion del lenguaje.
 
 # Resultados Obtenidos
+
 ## Cypress
 
 Videos de pruebas llevadas ejecutas https://drive.google.com/drive/folders/1EfkVeCj-r-eJhLFG6MXg10zTh_uxOm3h?usp=sharing
