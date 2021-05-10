@@ -22,3 +22,33 @@
 | Escenario 18   | Login con datos correctos                | Ir a la página de DESIGN                   | Cambiar el nombre de la página de home           | Guardar cambios                   | Ir a la página principal, verificar cambio de nombre de HOME | Login-Cambiar diseño de página web                |
 | Escenario 19   | Login con datos correctos                | Ir a las opciones MORE                     | Ir a las opciones LABS                           | Habilitar miembros                | Ir a la página de MEMBERS                                    | Login-Habilitar miembros                          |
 | Escenario 20   | Login con datos correctos                | Ir a las opciones MORE                     | Ir a opciones de perfil                          | Logout                            |                                                              | Login-logout                                      |
+
+# Cypress BDD test
+
+BDD test para entrega semana 5 calificada de pruebas automatizadas MISO.
+
+## Requerimientos
+
+Se necesita instalar mínino la versión 10 de node js, este trae npm necesario para correr las pruebas.
+
+## Instalar las dependencias del poryecto
+
+Para instalar las dependencias del proyecto se corre el siguiente comando:
+
+```bash
+npm install
+```
+
+## Correr el test de cypress
+
+Para correr el test se ejecuta el siguiente comando si se requiere una consola gráfica:
+
+```bash
+./node_modules/cypress/bin/cypress open
+```
+
+Y para correrlo sin consola gráfica:
+
+```bash
+./node_modules/cypress/bin/cypress run --headless
+```
