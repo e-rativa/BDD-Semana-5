@@ -22,5 +22,5 @@ function habilitarMembers() {
         cy.get($toggles.get(0)).click({ force: true });
     });
     cy.wait(1000);
-    cy.visit('https://894e1cdea8aa.ngrok.io/ghost/#/members');
+    cy.visit('https://3b429be77858.ngrok.io/ghost/#/members');
 }

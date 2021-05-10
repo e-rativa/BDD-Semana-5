@@ -18,7 +18,7 @@ describe('Escenario 3: Login-Crear post', function () {
         probarLoginDatosCorrectos();
         cy.wait(2000);
         cy.visit('https://3b429be77858.ngrok.io/ghost/#/posts');
-        cy.wait(2000);
+        cy.wait(4000);
         abrirPost(titulo);
         cy.wait(1000);
         publicarPost();

@@ -19,7 +19,7 @@ describe('Login-Crear post- publicar post con url y feature', function () {
         cy.wait(1000);
         cy.visit('https://3b429be77858.ngrok.io/ghost/#/posts');
         abrirPost(titulo);
-        cy.wait(2000);
+        cy.wait(4000);
         agregarUrlFeature();
         cy.wait(1000);
         publicarPost();
