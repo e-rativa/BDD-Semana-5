@@ -1,17 +1,17 @@
 
 describe('Escenario 1: Login', function () {
     it('Login sin datos', function () {
-        cy.visit('https://894e1cdea8aa.ngrok.io/ghost/#/signin');
+        cy.visit('https://3b429be77858.ngrok.io/ghost/#/signin');
         probarLoginSinDatos();
         cy.wait(1000);
     });
     it('Login datos erróneos', function () {
-        cy.visit('https://894e1cdea8aa.ngrok.io/ghost/#/signin');
+        cy.visit('https://3b429be77858.ngrok.io/ghost/#/signin');
         probarLoginDatosErroneos();
         cy.wait(1000);
     });
     it('Login datos correctos', function () {
-        cy.visit('https://894e1cdea8aa.ngrok.io/ghost/#/signin');
+        cy.visit('https://3b429be77858.ngrok.io/ghost/#/signin');
         probarLoginDatosCorrectos();
         cy.wait(1000);
     });

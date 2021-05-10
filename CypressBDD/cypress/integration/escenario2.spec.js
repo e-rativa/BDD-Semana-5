@@ -1,17 +1,17 @@
 
 describe('Escenario 2: Recuperar contraseña', function () {
     it('recuperar contraseña sin datos', function () {
-        cy.visit('https://894e1cdea8aa.ngrok.io/ghost/#/signin');
+        cy.visit('https://3b429be77858.ngrok.io/ghost/#/signin');
         probarRecuperacionContrasenaSinDatos();
         cy.wait(1000);
     });
     it('Login datos erróneos', function () {
-        cy.visit('https://894e1cdea8aa.ngrok.io/ghost/#/signin');
+        cy.visit('https://3b429be77858.ngrok.io/ghost/#/signin');
         probarRecuperacionContrasenaDatosErroneos();
         cy.wait(1000);
     });
     it('Login datos correctos', function () {
-        cy.visit('https://894e1cdea8aa.ngrok.io/ghost/#/signin');
+        cy.visit('https://3b429be77858.ngrok.io/ghost/#/signin');
         probarRecuperacionContrasenaDatosCorrectos();
         cy.wait(1000);
     });

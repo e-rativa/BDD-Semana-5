@@ -1,17 +1,17 @@
 describe('Escenario 17: Login - Activar sitio privado', function () {
     it('Cambio de estado privado', function () {
-        cy.visit('https://894e1cdea8aa.ngrok.io/ghost/#/signin');
+        cy.visit('https://3b429be77858.ngrok.io/ghost/#/signin');
         Login();
         cy.wait(1000);
-        cy.visit('https://894e1cdea8aa.ngrok.io/ghost/#/settings/general');
+        cy.visit('https://3b429be77858.ngrok.io/ghost/#/settings/general');
         cambiarEstadoPrivateSiteOn();
         cy.wait(1000);
-        cy.visit('https://894e1cdea8aa.ngrok.io/ghost/#/site');
+        cy.visit('https://3b429be77858.ngrok.io/ghost/#/site');
         cy.wait(1000);
-        cy.visit('https://894e1cdea8aa.ngrok.io/ghost/#/settings/general');
+        cy.visit('https://3b429be77858.ngrok.io/ghost/#/settings/general');
         cambiarEstadoPrivateSiteOff();
         cy.wait(1000);
-        cy.visit('https://894e1cdea8aa.ngrok.io/ghost/#/site');
+        cy.visit('https://3b429be77858.ngrok.io/ghost/#/site');
     });
 });
 

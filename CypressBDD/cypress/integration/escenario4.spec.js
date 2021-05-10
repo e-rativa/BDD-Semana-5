@@ -3,9 +3,9 @@ describe('Escenario 4: Login-Crear post- publicar post agendado', function () {
 
     const titulo = 'Titulo' + getRandomInt(0, 1000000);
     it('crearPost', function () {
-        cy.visit('https://894e1cdea8aa.ngrok.io/ghost/#/signin');
+        cy.visit('https://3b429be77858.ngrok.io/ghost/#/signin');
         probarLoginDatosCorrectos();
-        cy.visit('https://894e1cdea8aa.ngrok.io/ghost/#/editor/post');
+        cy.visit('https://3b429be77858.ngrok.io/ghost/#/editor/post');
         cy.wait(2000);
         llenarTitulo(titulo);
         cy.wait(2000);
@@ -14,10 +14,10 @@ describe('Escenario 4: Login-Crear post- publicar post agendado', function () {
 
     });
     it('Publicar post agendado', function () {
-        cy.visit('https://894e1cdea8aa.ngrok.io/ghost/#/signin');
+        cy.visit('https://3b429be77858.ngrok.io/ghost/#/signin');
         probarLoginDatosCorrectos();
         cy.wait(1000);
-        cy.visit('https://894e1cdea8aa.ngrok.io/ghost/#/posts');
+        cy.visit('https://3b429be77858.ngrok.io/ghost/#/posts');
         cy.wait(2000);
         abrirPost(titulo);
         cy.wait(1000);

@@ -1,9 +1,9 @@
 describe('Escenario 19: Login-Habilitar miembros', function () {
     it('Habilitar miembros', function () {
-        cy.visit('https://894e1cdea8aa.ngrok.io/ghost/#/signin');
+        cy.visit('https://3b429be77858.ngrok.io/ghost/#/signin');
         Login();
         cy.wait(1000);
-        cy.visit('https://894e1cdea8aa.ngrok.io/ghost/#/settings/labs');
+        cy.visit('https://3b429be77858.ngrok.io/ghost/#/settings/labs');
         cy.wait(2000);
         habilitarMembers();
         cy.wait(1000);
@@ -18,7 +18,7 @@ function Login() {
 }
 
 function habilitarMembers() {
-    cy.get('.input-toggle-component').then($toggles =>{
+    cy.get('.input-toggle-component').then($toggles => {
         cy.get($toggles.get(0)).click({ force: true });
     });
     cy.wait(1000);

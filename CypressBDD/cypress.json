@@ -1,6 +1,6 @@
 {
   "projectId": "Testkike",
   "chromeWebSecurity": false,
-  "baseUrl": "https://894e1cdea8aa.ngrok.io/ghost/",
+  "baseUrl": "https://3b429be77858.ngrok.io/ghost/",
   "redirectionLimit": 40
 }
