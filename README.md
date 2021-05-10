@@ -31,7 +31,13 @@ BDD test para entrega semana 5 calificada de pruebas automatizadas MISO.
 
 Se necesita instalar mínino la versión 10 de node js, este trae npm necesario para correr las pruebas.
 
-## Instalar las dependencias del poryecto
+## Instalar las dependencias del proyecto
+
+Primero navegar a la carpeta CypressBDD/cypress con el comando de navegación por consola
+
+```bash
+cd CypressBDD/
+```
 
 Para instalar las dependencias del proyecto se corre el siguiente comando:
 
