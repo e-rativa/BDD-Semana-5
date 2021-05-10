@@ -67,14 +67,14 @@ describe('Test escenarios 6 to 10', () => {
         cy.get('textarea.gh-editor-title.ember-text-area.gh-input.ember-view').clear()
         cy.get('textarea.gh-editor-title.ember-text-area.gh-input.ember-view').type(title)
         cy.get('.koenig-editor__editor').click()
-        cy.wait(3000)
+        cy.wait(6000)
         cy.get('a.blue.link.fw4.flex.items-center.ember-view').click({force: true})
 
     }
     else if (description && !title){
         cy.get('.koenig-editor__editor').clear()
         cy.get('.koenig-editor__editor').type(description)
-        cy.wait(3000)
+        cy.wait(6000)
         cy.get('a.blue.link.fw4.flex.items-center.ember-view').click({force: true})
     }
     else {
@@ -82,7 +82,7 @@ describe('Test escenarios 6 to 10', () => {
         cy.get('textarea.gh-editor-title.ember-text-area.gh-input.ember-view').clear()
         cy.get('textarea.gh-editor-title.ember-text-area.gh-input.ember-view').type(title)
         cy.get('.koenig-editor__editor').type(description)
-        cy.wait(3000)
+        cy.wait(6000)
         cy.get('a.blue.link.fw4.flex.items-center.ember-view').click({force: true})
     }
   }
@@ -98,7 +98,7 @@ describe('Test escenarios 6 to 10', () => {
         cy.get("div.gh-publishmenu-radio-label").contains("Schedule it for later").click()
       }
       cy.get("button.gh-btn.gh-btn-blue.gh-publishmenu-button.gh-btn-icon.ember-view").click()
-      cy.wait(3000)
+      cy.wait(6000)
       cy.get('a.blue.link.fw4.flex.items-center.ember-view').click({force: true})
 
   }
