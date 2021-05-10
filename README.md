@@ -81,8 +81,4 @@ Y para correrlo sin consola gráfica:
 # Resultados Obtenidos
 ## Cypress
 
-Escenario 16 https://drive.google.com/file/d/1ZaNAjAjEJ61fNTiI4ninWymJQH4H8yiP/view?usp=sharing
-Escenario 17 https://drive.google.com/file/d/1ZLagAM-rCW5X45Hz2dFmdojI4V3li9Qn/view?usp=sharing
-Escenario 18 https://drive.google.com/file/d/1LLFWgGWMt-6nQexH6kyos5JQzRzk6YuA/view?usp=sharing
-Escenario 19 https://drive.google.com/file/d/1tB7TARpkNXCGJTSdnoKNGYEyfcP55yIo/view?usp=sharing
-Escenario 20 https://drive.google.com/file/d/1OqA61I5ka04IfBxHfhjRR8SzcUt9yieh/view?usp=sharing
+Videos de Pruebas llevadas ejecutas https://drive.google.com/drive/folders/1EfkVeCj-r-eJhLFG6MXg10zTh_uxOm3h?usp=sharing
