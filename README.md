@@ -80,7 +80,7 @@ Para correr el test se ejecuta el siguiente comando para abrir la interfaz gráf
 ./node_modules/cypress/bin/cypress open
 ```
 
-Luego de esto se puestra una lista con cada especificación, **por favor ejecutar una a una**
+## Luego de esto se puestra una lista con cada especificación, **por favor ejecutar una a una**
 
 ---
 
