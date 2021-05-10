@@ -47,15 +47,17 @@ npm install
 
 ## Correr el test de cypress
 
-Para correr el test se ejecuta el siguiente comando para abrir la interfaz gráfica:
+Para correr el test se ejecuta el siguiente comando si se requiere una consola gráfica:
 
 ```bash
 ./node_modules/cypress/bin/cypress open
 ```
 
-Luego de esto se puestra una lista con cada especificación, **por favor ejecutar una a una**
+Y para correrlo sin consola gráfica:
 
-
+```bash
+./node_modules/cypress/bin/cypress run --headless
+```
 # Pros y contras de herramientas usadas
 
 ## Cypress
@@ -75,3 +77,11 @@ Luego de esto se puestra una lista con cada especificación, **por favor ejecuta
 - Es mas lento en la ejecucion de todas las pruebas vs Cypress.
 ### Contras
 - Falta bastante documentacion en la implementacion del lenguaje.
+
+# Resultados Obtenidos
+## Cypress
+Escenario 16 https://drive.google.com/file/d/1ZaNAjAjEJ61fNTiI4ninWymJQH4H8yiP/view?usp=sharing
+Escenario 17 https://drive.google.com/file/d/1ZLagAM-rCW5X45Hz2dFmdojI4V3li9Qn/view?usp=sharing
+Escenario 18 https://drive.google.com/file/d/1LLFWgGWMt-6nQexH6kyos5JQzRzk6YuA/view?usp=sharing
+Escenario 19 https://drive.google.com/file/d/1tB7TARpkNXCGJTSdnoKNGYEyfcP55yIo/view?usp=sharing
+Escenario 20 https://drive.google.com/file/d/1OqA61I5ka04IfBxHfhjRR8SzcUt9yieh/view?usp=sharing
