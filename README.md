@@ -80,6 +80,7 @@ Y para correrlo sin consola gráfica:
 
 # Resultados Obtenidos
 ## Cypress
+
 Escenario 16 https://drive.google.com/file/d/1ZaNAjAjEJ61fNTiI4ninWymJQH4H8yiP/view?usp=sharing
 Escenario 17 https://drive.google.com/file/d/1ZLagAM-rCW5X45Hz2dFmdojI4V3li9Qn/view?usp=sharing
 Escenario 18 https://drive.google.com/file/d/1LLFWgGWMt-6nQexH6kyos5JQzRzk6YuA/view?usp=sharing
