@@ -1,3 +1,5 @@
+Feature: Login - Configuration General
+
 @user1 @web
   Scenario: Login - Editar informacion general
     Given I navigate to page "https://894e1cdea8aa.ngrok.io/ghost/#/signin"
