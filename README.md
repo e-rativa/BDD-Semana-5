@@ -150,4 +150,36 @@ En el ambiente de kraken previamente configurado por favor correr el siguiente c
 ```bash
 bundle exec kraken-mobile run
 ```
+---
+# Backstop
 
+## Instalación backstop
+
+Para instalar si aún no lo tiene instalado el backstop correr el siguiente comando.
+
+```bash
+npm install -g backstopjs
+```
+
+## Configuración del ambiente
+
+Para correr la comparativa de backstop para las pruebas de regresión visuales (vrt) se accede a la carpeta **backstop** y correr el siguiente comando.
+
+```bash
+backstop init
+```
+
+Esto creará los archivos necesario para crear el reporte y la comparativa de las evidencias, para utilizar la herramienta copiar las 2 carpetas a comparar, igualmente en la carpeta **backstop** 
+(e.g.  **backstop/carpeta1** | **backstop/carpeta1**) 
+
+**IMPORTANTE** estás tienen que tener unas carpetas internas donde se evidencien los escenarios y dentro de dichas carpetas las respectivas capturas.
+
+**Correr backstop**
+
+```bash
+node executeTest.js carpeta1 carpeta2
+```
+
+**Nota**:
+
+Este comando se peude demorar si el número de imagenes es muy grande.
