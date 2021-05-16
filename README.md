@@ -5,13 +5,13 @@ VRT para entrega semana 6 calificada de pruebas automatizadas MISO.
 
 # Cypress VRT 
 
-Para la generación de reportes VRT utilizando los screenshoots generados de las pruebas con Cypress se debe tener en cuenta la siguiente información.
+Para la generación de reportes VRT utilizando los screenshots generados de las pruebas con Cypress se debe tener en cuenta la siguiente información.
 
 ## Requerimientos
 
 Se necesita instalar mínino la versión 10 de node js, este trae npm necesario para correr las pruebas.
 
-## Screenshoots Ghost v3.3.0
+## Screenshots Ghost v3.3.0
 
 ### Instalar las dependencias del proyecto.
 
@@ -37,15 +37,15 @@ Para correr el test se ejecuta el siguiente comando para abrir la interfaz gráf
 
 ### Luego de esto se puebra una lista con cada especificación, **por favor ejecutar una a una**
 
-Al terminar la ejecución de las pruebas se generan los screenshoots especificados que podrán ser accedidos en la ruta:
+Al terminar la ejecución de las pruebas se generan los screenshots especificados que podrán ser accedidos en la ruta:
 
 ```bash
 CypressBDD_3.3.0/cypress/screenshots/
 ```
-En esta ruta se encontran las carpetas de cada escenario ejecutado con los screenshoot respectivos.
+En esta ruta se encontran las carpetas de cada escenario ejecutado con los screenshot respectivos.
 
 
-## Screenshoots Ghost v3.42.5
+## Screenshots Ghost v3.42.5
 
 ### Instalar las dependencias del proyecto.
 
@@ -71,12 +71,12 @@ Para correr el test se ejecuta el siguiente comando para abrir la interfaz gráf
 
 ### Luego de esto se puebra una lista con cada especificación, **por favor ejecutar una a una**
 
-Al terminar la ejecución de las pruebas se generan los screenshoots especificados que podrán ser accedidos en la ruta:
+Al terminar la ejecución de las pruebas se generan los screenshots especificados que podrán ser accedidos en la ruta:
 
 ```bash
 CypressBDD_3.42.5/cypress/screenshots/
 ```
-En esta ruta se encontran las carpetas de cada escenario ejecutado con los screenshoot respectivos.
+En esta ruta se encontran las carpetas de cada escenario ejecutado con los screenshot respectivos.
 
 ---
 
