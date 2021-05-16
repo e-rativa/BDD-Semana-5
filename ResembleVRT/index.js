@@ -17,7 +17,7 @@ async function executeTest(){
     escenarios = fs.readdirSync('./Ghost_3.3.0');
     console.log(JSON.stringify(escenarios));
 
-    //fs.writeFileSync(`./results/report.html`, '' );
+    fs.writeFileSync(`./results/report.html`, '' );
 
     for(let i = 0; i < escenarios.length; i++){
       // Search de Pasos del escenario (Se asume maximo de pasos en version 3.42.5);
