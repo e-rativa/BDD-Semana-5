@@ -163,7 +163,7 @@ npm install -g backstopjs
 
 ## Configuración del ambiente
 
-Para correr la comparativa de backstop para las pruebas de regresión visuales (vrt) se accede a la carpeta **backstop** y correr el siguiente comando.
+Para correr la comparativa de backstop para las pruebas de regresión visuales (vrt) se accede a la carpeta **backstop** y correr los siguientes comandos.
 
 ```bash
 backstop init
@@ -171,6 +171,12 @@ backstop init
 
 Esto creará los archivos necesario para crear el reporte y la comparativa de las evidencias, para utilizar la herramienta copiar las 2 carpetas a comparar, igualmente en la carpeta **backstop** 
 (e.g.  **backstop/carpeta1** | **backstop/carpeta1**) 
+
+```bash
+npm install
+```
+
+Para instalar los módulos necesarios para ejecutar el proceso.
 
 **IMPORTANTE** estás tienen que tener unas carpetas internas donde se evidencien los escenarios y dentro de dichas carpetas las respectivas capturas.
 
