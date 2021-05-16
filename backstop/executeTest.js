@@ -3,6 +3,7 @@ let originalPath = undefined;
 let referencePath = undefined;
 const { exec } = require("child_process");
 const datetime = new Date().toISOString().replace(/:/g,".");
+const open = require('open');
 process.argv.forEach(function (val,index) {
   if (index == 2) {
     originalPath=val;
@@ -29,7 +30,7 @@ setTimeout(()=>{
 function createConfigJSON(configJSON){
    const  escenarios = fs.readdirSync(`./${originalPath}`);
    const referenceJson=configJSON;
-   const  testJson= configJSON;
+   const  testJson= JSON.parse(JSON.stringify(configJSON));
     for(let escenario of escenarios){
 
       const steps = fs.readdirSync(`./${referencePath}/${escenario}`);
@@ -76,7 +77,6 @@ function createConfigJSON(configJSON){
         );
       }
     }
-
       createConfigFiles(`${datetime}-1.json`,testJson,()=>{
         createConfigFiles(`${datetime}.json`,referenceJson,()=>{
           executeBackstopAll(`${datetime}.json`,`${datetime}-1.json`);
@@ -118,9 +118,10 @@ fs.unlink(path, (err) => {
 }
 
 function executeBackstop(configFilenName,configFilenName2){
-exec(`backstop test --config="${configFilenName}"`,{maxBuffer: 1024 * 1000}, (error, stdout, stderr) => {
+exec(`backstop test --config="${configFilenName2}"`,{maxBuffer: 1024 * 1000}, (error, stdout, stderr) => {
   deletePath(configFilenName);
   deletePath(configFilenName2);
+  open(__dirname+ '/backstop_data/html_report/index.html');
   if (error) {
         console.log(`error: ${error.message}`);
         return;
