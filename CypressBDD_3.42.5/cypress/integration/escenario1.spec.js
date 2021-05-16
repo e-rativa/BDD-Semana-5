@@ -2,21 +2,21 @@
 let id=1;
 describe('Escenario 1: Login', function () {
     it('Login sin datos', function () {
-        cy.visit('https://e61b4ef2fb35.ngrok.io/ghost/#/signin');
+        cy.visit('https://3d9074f0bcbd.ngrok.io/ghost/#/signin');
         screenShot('LoginSinDatos',true);
         probarLoginSinDatos();
         screenShot('LoginSinDatos',false);
         cy.wait(1000);
     });
     it('Login datos erróneos', function () {
-        cy.visit('https://e61b4ef2fb35.ngrok.io/ghost/#/signin');
+        cy.visit('https://3d9074f0bcbd.ngrok.io/ghost/#/signin');
         screenShot('LoginDatosErroneos',true);
         probarLoginDatosErroneos();
         screenShot('LoginDatosErroneos',false);
         cy.wait(1000);
     });
     it('Login datos correctos', function () {
-        cy.visit('https://e61b4ef2fb35.ngrok.io/ghost/#/signin');
+        cy.visit('https://3d9074f0bcbd.ngrok.io/ghost/#/signin');
         screenShot('LoginDatosCorrectos',true);
         probarLoginDatosCorrectos();
         screenShot('LoginDatosCorrectos',false);

@@ -1,21 +1,21 @@
 let id=1;
 describe('Escenario 2: Recuperar contraseña', function () {
     it('recuperar contraseña sin datos', function () {
-        cy.visit('https://e61b4ef2fb35.ngrok.io/ghost/#/signin');
+        cy.visit('https://3d9074f0bcbd.ngrok.io/ghost/#/signin');
         screenShot('RecuperarContrasenaSinDatos',true);
         probarRecuperacionContrasenaSinDatos();
         screenShot('RecuperarContrasenaSinDatos',false);
         cy.wait(1000);
     });
     it('Recuperar contraseña datos erroneos', function () {
-        cy.visit('https://e61b4ef2fb35.ngrok.io/ghost/#/signin');
+        cy.visit('https://3d9074f0bcbd.ngrok.io/ghost/#/signin');
         screenShot('RecuperarContrasenaDatosErroneos',true);
         probarRecuperacionContrasenaDatosErroneos();
         screenShot('RecuperarContrasenaDatosErroneos',false);
         cy.wait(1000);
     });
     it('Recuperar contraseña datos Correctos', function () {
-        cy.visit('https://e61b4ef2fb35.ngrok.io/ghost/#/signin');
+        cy.visit('https://3d9074f0bcbd.ngrok.io/ghost/#/signin');
         screenShot('RecuperarContrasenaDatosCorrectos',true);
         probarRecuperacionContrasenaDatosCorrectos();
         screenShot('RecuperarContrasenaDatosCorrectos',false);

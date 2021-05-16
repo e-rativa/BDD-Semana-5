@@ -3,11 +3,11 @@ describe('Escenario 4: Login-Crear post- publicar post agendado', function () {
 
     const titulo = 'Titulo' + getRandomInt(0, 1000000);
     it('crearPost', function () {
-        cy.visit('https://e61b4ef2fb35.ngrok.io/ghost/#/signin');
+        cy.visit('https://3d9074f0bcbd.ngrok.io/ghost/#/signin');
         screenShot('CrearPost',true);
         probarLoginDatosCorrectos();
         screenShot('CrearPost',false);
-        cy.visit('https://e61b4ef2fb35.ngrok.io/ghost/#/editor/post');
+        cy.visit('https://3d9074f0bcbd.ngrok.io/ghost/#/editor/post');
         screenShot('CrearPost',false);
         cy.wait(2000);
         llenarTitulo(titulo);
@@ -19,12 +19,12 @@ describe('Escenario 4: Login-Crear post- publicar post agendado', function () {
 
     });
     it('Publicar post agendado', function () {
-        cy.visit('https://e61b4ef2fb35.ngrok.io/ghost/#/signin');
+        cy.visit('https://3d9074f0bcbd.ngrok.io/ghost/#/signin');
         screenShot('CrearPostAgendado',true);
         probarLoginDatosCorrectos();
         screenShot('CrearPostAgendado',false);
         cy.wait(1000);
-        cy.visit('https://e61b4ef2fb35.ngrok.io/ghost/#/posts');
+        cy.visit('https://3d9074f0bcbd.ngrok.io/ghost/#/posts');
         screenShot('CrearPostAgendado',false);
         cy.wait(4000);
         abrirPost(titulo);
