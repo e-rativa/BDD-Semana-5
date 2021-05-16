@@ -182,4 +182,4 @@ node executeTest.js carpeta1 carpeta2
 
 **Nota**:
 
-Este comando se peude demorar si el número de imagenes es muy grande.
+Este comando se puede demorar si el número de imagenes es muy grande.
