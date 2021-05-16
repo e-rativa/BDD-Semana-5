@@ -1,12 +1,12 @@
 let count = 0;
 describe('Escenario 19: Login-Habilitar miembros', function () {
     it('Habilitar miembros', function () {
-        cy.visit('https://e61b4ef2fb35.ngrok.io/ghost/#/signin');
+        cy.visit('https://3d9074f0bcbd.ngrok.io/ghost/#/signin');
         cy.screenshot('Escenario HabilitarMiembros-'+(count++)+'');
         cy.wait(1000);
         Login();
         cy.wait(1000);
-        cy.visit('https://e61b4ef2fb35.ngrok.io/ghost/#/settings/labs');
+        cy.visit('https://3d9074f0bcbd.ngrok.io/ghost/#/settings/labs');
         cy.screenshot('Escenario HabilitarMiembros-'+(count++)+'');
         cy.wait(2000);
         habilitarMembers();
@@ -32,7 +32,7 @@ function habilitarMembers() {
     });
     cy.screenshot('Escenario HabilitarMiembros-'+(count++)+'');
     cy.wait(1000);
-    cy.visit('https://e61b4ef2fb35.ngrok.io/ghost/#/members');
+    cy.visit('https://3d9074f0bcbd.ngrok.io/ghost/#/members');
     cy.screenshot('Escenario HabilitarMiembros-'+(count++)+'');
     cy.wait(1000);
 }

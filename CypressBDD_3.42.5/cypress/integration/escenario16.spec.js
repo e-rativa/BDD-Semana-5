@@ -1,12 +1,12 @@
 let count = 0;
 describe('Escenario 16: Login - Editar información general', function () {
     it('Cambio de titulo site', function () {
-        cy.visit('https://e61b4ef2fb35.ngrok.io/ghost/#/signin');
+        cy.visit('https://3d9074f0bcbd.ngrok.io/ghost/#/signin');
         cy.screenshot('Escenario EditarInformaciónGeneral-'+(count++)+'');
         cy.wait(1000);
         Login();
         cy.wait(1000);
-        cy.visit('https://e61b4ef2fb35.ngrok.io/ghost/#/settings/general');
+        cy.visit('https://3d9074f0bcbd.ngrok.io/ghost/#/settings/general');
         cy.wait(1000);
         cy.screenshot('Escenario EditarInformaciónGeneral-'+(count++)+'');
         cy.wait(1000);

@@ -1,14 +1,14 @@
 let count = 0;
 describe('Escenario 20: Login-logout', function () {
     it('LogOut', function () {
-        cy.visit('https://e61b4ef2fb35.ngrok.io/ghost/#/signin');
+        cy.visit('https://3d9074f0bcbd.ngrok.io/ghost/#/signin');
         cy.screenshot('Escenario Logout-'+(count++)+'');
         cy.wait(1000);
         Login();
         cy.wait(1000);
         LogOut();
         cy.wait(1000);
-        cy.visit('https://e61b4ef2fb35.ngrok.io/ghost/#/signout');
+        cy.visit('https://3d9074f0bcbd.ngrok.io/ghost/#/signout');
         cy.screenshot('Escenario Logout-'+(count++)+'');
         cy.wait(1000);
     });

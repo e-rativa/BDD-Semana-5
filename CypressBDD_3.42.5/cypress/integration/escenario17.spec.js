@@ -1,25 +1,25 @@
 let count = 0;
 describe('Escenario 17: Login - Activar sitio privado', function () {
     it('Cambio de estado privado', function () {
-        cy.visit('https://e61b4ef2fb35.ngrok.io/ghost/#/signin');
+        cy.visit('https://3d9074f0bcbd.ngrok.io/ghost/#/signin');
         cy.screenshot('Escenario ActivarSitioPrivado-'+(count++)+'');
         cy.wait(1000);
         Login();
         cy.wait(1000);
-        cy.visit('https://e61b4ef2fb35.ngrok.io/ghost/#/settings/general');
+        cy.visit('https://3d9074f0bcbd.ngrok.io/ghost/#/settings/general');
         cy.screenshot('Escenario ActivarSitioPrivado-'+(count++)+'');
         cy.wait(1000);
         cambiarEstadoPrivateSiteOn();
         cy.wait(1000);
-        cy.visit('https://e61b4ef2fb35.ngrok.io/ghost/#/site');
+        cy.visit('https://3d9074f0bcbd.ngrok.io/ghost/#/site');
         cy.screenshot('Escenario ActivarSitioPrivado-'+(count++)+'');
         cy.wait(1000);
-        cy.visit('https://e61b4ef2fb35.ngrok.io/ghost/#/settings/general');
+        cy.visit('https://3d9074f0bcbd.ngrok.io/ghost/#/settings/general');
         cy.screenshot('Escenario ActivarSitioPrivado-'+(count++)+'');
         cy.wait(1000);
         cambiarEstadoPrivateSiteOff();
         cy.wait(1000);
-        cy.visit('https://e61b4ef2fb35.ngrok.io/ghost/#/site');
+        cy.visit('https://3d9074f0bcbd.ngrok.io/ghost/#/site');
         cy.screenshot('Escenario ActivarSitioPrivado-'+(count++)+'');
         cy.wait(1000);
     });
