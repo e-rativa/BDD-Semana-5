@@ -1,20 +1,24 @@
 # Pruebas Automatizadas - Grupo 4-ywj
 ---
 
-# Cypress BDD test
+VRT para entrega semana 6 calificada de pruebas automatizadas MISO.
 
-BDD test para entrega semana 5 calificada de pruebas automatizadas MISO.
+# Cypress VRT 
+
+Para la generación de reportes VRT utilizando los screenshoots generados de las pruebas con Cypress se debe tener en cuenta la siguiente información.
 
 ## Requerimientos
 
 Se necesita instalar mínino la versión 10 de node js, este trae npm necesario para correr las pruebas.
 
-## Instalar las dependencias del proyecto
+## Screenshoots Ghost v3.3.0
 
-Primero navegar a la carpeta CypressBDD/cypress con el comando de navegación por consola
+### Instalar las dependencias del proyecto.
+
+Primero navegar a la carpeta CypressBDD_3.3.0/cypress con el comando de navegación por consola
 
 ```bash
-cd CypressBDD/
+cd CypressBDD_3.3.0/
 ```
 
 Para instalar las dependencias del proyecto se corre el siguiente comando:
@@ -23,7 +27,7 @@ Para instalar las dependencias del proyecto se corre el siguiente comando:
 npm install
 ```
 
-## Correr el test de cypress
+### Correr el test de cypress
 
 Para correr el test se ejecuta el siguiente comando para abrir la interfaz gráfica:
 
@@ -31,7 +35,48 @@ Para correr el test se ejecuta el siguiente comando para abrir la interfaz gráf
 ./node_modules/cypress/bin/cypress open
 ```
 
-## Luego de esto se puebra una lista con cada especificación, **por favor ejecutar una a una**
+### Luego de esto se puebra una lista con cada especificación, **por favor ejecutar una a una**
+
+Al terminar la ejecución de las pruebas se generan los screenshoots especificados que podrán ser accedidos en la ruta:
+
+```bash
+CypressBDD_3.3.0/cypress/screenshots/
+```
+En esta ruta se encontran las carpetas de cada escenario ejecutado con los screenshoot respectivos.
+
+
+## Screenshoots Ghost v3.42.5
+
+### Instalar las dependencias del proyecto.
+
+Primero navegar a la carpeta CypressBDD_3.42.5/cypress con el comando de navegación por consola
+
+```bash
+cd CypressBDD_3.42.5/
+```
+
+Para instalar las dependencias del proyecto se corre el siguiente comando:
+
+```bash
+npm install
+```
+
+### Correr el test de cypress
+
+Para correr el test se ejecuta el siguiente comando para abrir la interfaz gráfica:
+
+```bash
+./node_modules/cypress/bin/cypress open
+```
+
+### Luego de esto se puebra una lista con cada especificación, **por favor ejecutar una a una**
+
+Al terminar la ejecución de las pruebas se generan los screenshoots especificados que podrán ser accedidos en la ruta:
+
+```bash
+CypressBDD_3.42.5/cypress/screenshots/
+```
+En esta ruta se encontran las carpetas de cada escenario ejecutado con los screenshoot respectivos.
 
 ---
 
