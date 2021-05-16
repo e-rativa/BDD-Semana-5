@@ -182,8 +182,15 @@ node executeTest.js carpeta1 carpeta2
 
 **Nota**:
 
+para nuestro caso concreto se puede correr el siguiente comando:
+
+```bash
+node executeTest.js Ghost_3.3.0 Ghost_3.42.5
+```
+
 Este comando se puede demorar si el número de imagenes es muy grande.
 
+---
 # Resemble JS
 
 ## Instalación resemble
