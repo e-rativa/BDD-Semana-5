@@ -82,7 +82,7 @@ En esta ruta se encontran las carpetas de cada escenario ejecutado con los scree
 
 # Kraken BDD test
 
-BDD test para entrega semana 5 calificada de pruebas automatizadas MISO.
+BDD test para entrega semana 6 calificada de pruebas automatizadas MISO.
 
 ## Requerimientos
 
