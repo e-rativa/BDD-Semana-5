@@ -3,6 +3,7 @@ Feature: Create a tag
 
   @user1 @web
   Scenario: Create a tag without title
+  Then I want to save this file with the given version "3.3.0" and stepname "CrearTagSinTitulo"
     Given I navigate to page "https://e61b4ef2fb35.ngrok.io/ghost/"
      When I enter "pruebasmiso4103@gmail.com" into input field having id "ember8"
       And I enter "qwerty1234" into input field having id "ember10"

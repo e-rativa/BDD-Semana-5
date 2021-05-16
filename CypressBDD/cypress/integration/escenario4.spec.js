@@ -1,27 +1,37 @@
-
+let id=0;
 describe('Escenario 4: Login-Crear post- publicar post agendado', function () {
 
     const titulo = 'Titulo' + getRandomInt(0, 1000000);
     it('crearPost', function () {
         cy.visit('https://e61b4ef2fb35.ngrok.io/ghost/#/signin');
+        screenShot('CrearPost',true);
         probarLoginDatosCorrectos();
+        screenShot('CrearPost',false);
         cy.visit('https://e61b4ef2fb35.ngrok.io/ghost/#/editor/post');
+        screenShot('CrearPost',false);
         cy.wait(2000);
         llenarTitulo(titulo);
+        screenShot('CrearPost',false);
         cy.wait(2000);
         llenarContenido();
+        screenShot('CrearPost',false);
         cy.wait(2000);
 
     });
     it('Publicar post agendado', function () {
         cy.visit('https://e61b4ef2fb35.ngrok.io/ghost/#/signin');
+        screenShot('CrearPostAgendado',true);
         probarLoginDatosCorrectos();
+        screenShot('CrearPostAgendado',false);
         cy.wait(1000);
         cy.visit('https://e61b4ef2fb35.ngrok.io/ghost/#/posts');
+        screenShot('CrearPostAgendado',false);
         cy.wait(4000);
         abrirPost(titulo);
+        screenShot('CrearPostAgendado',false);
         cy.wait(1000);
         publicarPostAgendado();
+        screenShot('CrearPostAgendado',false);
         cy.wait(2000);
     });
 
@@ -66,6 +76,17 @@ function llenarContenido() {
         .then($textAreas => {
             $textAreas.get(0).innerHTML = 'Contenido post';
         });
+        cy.get('a.blue.link.fw4.flex.items-center.ember-view').click()
 
 }
+
+function screenShot(step,restart){
+    if(restart){
+        id=1;
+    }
+    cy.wait(2000);
+    cy.screenshot('Escenario4-'+step+id);
+    id++;
+}
+
 

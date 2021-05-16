@@ -1,27 +1,36 @@
-
+let id=1;
 describe('Escenario 3: Login-Crear post', function () {
 
     const titulo = 'Titulo' + getRandomInt(0, 1000000);
     it('crearPost', function () {
         cy.visit('https://e61b4ef2fb35.ngrok.io/ghost/#/signin');
+        screenShot('CrearPost',true);
         probarLoginDatosCorrectos();
         cy.visit('https://e61b4ef2fb35.ngrok.io/ghost/#/editor/post');
+        screenShot('CrearPost',false);
         cy.wait(2000);
         llenarTitulo(titulo);
+        screenShot('CrearPost',false);
         cy.wait(2000);
         llenarContenido();
+        screenShot('CrearPost',false);
         cy.wait(2000);
 
     });
     it('Publicar post', function () {
         cy.visit('https://e61b4ef2fb35.ngrok.io/ghost/#/signin');
+        screenShot('PublicarPost',true);
         probarLoginDatosCorrectos();
+        screenShot('PublicarPost',false);
         cy.wait(2000);
         cy.visit('https://e61b4ef2fb35.ngrok.io/ghost/#/posts');
+        screenShot('PublicarPost',false);
         cy.wait(4000);
         abrirPost(titulo);
+        screenShot('PublicarPost',false);
         cy.wait(1000);
         publicarPost();
+        screenShot('PublicarPost',false);
         cy.wait(2000);
     });
 
@@ -60,10 +69,21 @@ function llenarTitulo(titulo) {
 
 function llenarContenido() {
 
+    //cy.get('.koenig-editor__editor').type(".")
     cy.get('article').find('p')
         .then($textAreas => {
             $textAreas.get(0).innerHTML = 'Contenido post';
         });
+    cy.get('a.blue.link.fw4.flex.items-center.ember-view').click()
 
+}
+
+function screenShot(step,restart){
+    if(restart){
+        id=1;
+    }
+    cy.wait(2000);
+    cy.screenshot('Escenario3-'+step+id);
+    id++;
 }
 

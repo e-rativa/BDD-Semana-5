@@ -2,6 +2,7 @@ Feature: Publish a page
 
   @user1 @web
   Scenario: Publish page immediately
+  Then I want to save this file with the given version "3.3.0" and stepname "PublicarPagina"
     Given I navigate to page "https://e61b4ef2fb35.ngrok.io/ghost/"
      When I enter "pruebasmiso4103@gmail.com" into input field having id "ember8"
       And I enter "qwerty1234" into input field having id "ember10"

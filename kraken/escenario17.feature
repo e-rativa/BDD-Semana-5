@@ -1,7 +1,8 @@
  Feature: Login - Configuration General
 
   @user1 @web
-    Scenario: Login - Editar informacion general
+    Scenario: Login - Activar Sitio Privado
+    Then I want to save this file with the given version "3.3.0" and stepname "ActivarSitioPrivado"
       Given I navigate to page "https://e61b4ef2fb35.ngrok.io/ghost/#/signin"
       Then I enter "pruebasmiso4103@gmail.com" into input field having id "ember8"
       Then I enter "qwerty1234" into input field having id "ember10"

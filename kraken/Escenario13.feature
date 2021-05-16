@@ -2,6 +2,7 @@ Feature: Login - Creacion de usuario - cambiar nombre y rol
 
   @user1 @web
   Scenario: Escenario 13 - Pruebas de usuarios
+  Then I want to save this file with the given version "3.3.0" and stepname "CambiarNombreRol"
     Given I navigate to page "https://e61b4ef2fb35.ngrok.io/ghost/"
     Then I enter "pruebasmiso4103@gmail.com" into input field having css selector ".email.ember-text-field"
     Then I enter "qwerty1234" into input field having css selector ".password.ember-text-field"
