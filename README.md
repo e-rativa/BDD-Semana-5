@@ -188,7 +188,9 @@ para nuestro caso concreto se puede correr el siguiente comando:
 node executeTest.js Ghost_3.3.0 Ghost_3.42.5
 ```
 
-Este comando se puede demorar si el número de imagenes es muy grande.
+- Este comando se puede demorar si el número de imagenes es muy grande.
+- Se debe esperar hasta que el reporte se refresque por segunda vez y el proceso en la consola termine completamente.
+
 
 ---
 # Resemble JS
