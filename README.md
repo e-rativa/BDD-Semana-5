@@ -143,6 +143,8 @@ kraken-mobile setup
 
 **Por favor si lo hace por este comando crear 5 usuarios y todos web**
 
+**Dentro de la carpeta de Kraken se encuentra la declaración de los web_steps utilizados para la generacion de los screenshots. Por favor remplace el archivo existente en la carpeta del "definitions_steps/web_steps".**
+
 ## Correr las pruebas kraken
 
 En el ambiente de kraken previamente configurado por favor correr el siguiente comando:
