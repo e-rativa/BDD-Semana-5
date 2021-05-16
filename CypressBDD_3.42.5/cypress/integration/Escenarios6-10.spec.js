@@ -1,4 +1,4 @@
-const urlBase = 'https://e61b4ef2fb35.ngrok.io/'
+const urlBase = 'https://3d9074f0bcbd.ngrok.io/'
 var pageTitle = ''
 var pageDescription = ''
 var tagName = ''
