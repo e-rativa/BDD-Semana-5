@@ -1,0 +1,5 @@
+{
+  "projectId": "Testkike",
+  "chromeWebSecurity": false,
+  "baseUrl": "https://e61b4ef2fb35.ngrok.io/ghost/"
+}

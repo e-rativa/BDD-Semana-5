@@ -1,4 +1,10 @@
-CypressBDD/node_modules
 /.DS_Store
+CypressBDD/node_modules
 CypressBDD/cypress/screenshots/*
 CypressBDD/cypress/videos/*
+CypressBDD_3.3.0/node_modules
+CypressBDD_3.3.0/cypress/screenshots/*
+CypressBDD_3.3.0/cypress/videos/*
+CypressBDD_3.42.5/node_modules
+CypressBDD_3.42.5/cypress/screenshots/*
+CypressBDD_3.42.5/cypress/videos/*
