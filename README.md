@@ -183,3 +183,34 @@ node executeTest.js carpeta1 carpeta2
 **Nota**:
 
 Este comando se puede demorar si el número de imagenes es muy grande.
+
+# Resemble JS
+
+## Instalación resemble
+
+Para instalar si aún no lo tiene instalado el resembleJs desplazarse a la carpeta ResembleVRT con el comando 
+
+```bash
+cd ResembleVRT
+```
+Después de esto correr el siguiente comando.
+
+```bash
+npm install
+```
+
+## Configuración del ambiente
+
+Para correr la comparativa de resemble para las pruebas de regresión visuales (vrt) se accede a la carpeta **ResembleVRT** y correr el siguiente comando.
+
+**IMPORTANTE** estás tienen que tener unas carpetas internas donde se evidencien los escenarios y dentro de dichas carpetas las respectivas capturas, con nombre de las versiones GHOST 3.3.0 y GHOST 3.42.5
+
+**Correr resemble**
+
+```bash
+node index.js
+```
+
+**Nota**:
+
+Este comando se puede demorar si el número de imágenes es muy grande.
