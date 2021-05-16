@@ -1,5 +1,4 @@
 # Pruebas Automatizadas - Grupo 4-ywj
-
 ---
 
 # Cypress BDD test
