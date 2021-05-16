@@ -6,6 +6,7 @@ describe('Escenario 13: actualizacion de Usuarios', () => {
         cy.wait(4000);
         cy.visit(pageObject.url + '/#/staff');
         cy.wait(4000);
+        pageObject.takeScreenshot();
         pageObject.updateNameRoleUser('Ghost', 'Ghost Editado', 'Administrator');
         pageObject.updateNameRoleUser('Ghost', 'Ghost', 'Author');
         

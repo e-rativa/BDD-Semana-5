@@ -6,6 +6,7 @@ describe('Escenario 15: Cambio correcto de pass', () => {
         cy.wait(4000);
         cy.visit(pageObject.url + '/#/staff');
         cy.wait(4000);
+        pageObject.takeScreenshot();
         pageObject.changePasswordOk('Ghost');
         
     });

@@ -6,6 +6,7 @@ describe('Escenario 14: Cambio fallido de pass', () => {
         cy.wait(4000);
         cy.visit(pageObject.url + '/#/staff');
         cy.wait(4000);
+        pageObject.takeScreenshot();
         pageObject.changePasswordDifferent('Ghost');
         
     });
