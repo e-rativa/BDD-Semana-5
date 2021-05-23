@@ -569,7 +569,7 @@ Scenario: I create a random post and edit a page and publish immediately and unp
     Then I edit a page
     And I wait for 2 second
     Then I publish a page
-    And I wait for 2 second
+    And I wait for 3 second
     Then I unpublish a page
     And I wait for 2 second
     Then I logout
@@ -663,6 +663,7 @@ Scenario: I create a random post, schedule publish, edit, unpublish
     And I wait for 2 second
     Then I logout
     And I wait for 2 second
+
  Scenario Outline: Recuperar contraseña datos apriori raros
     Given I go to ghost login screen
     When I fill with <email> with naugthy data

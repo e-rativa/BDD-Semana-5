@@ -117,18 +117,20 @@ function makeString(charLimit) {
 }
 
 function publishPageImmediately() {
-    browser.$('div=Publish').click();
-    $('button=Publish').waitForDisplayed(2000);
-    browser.$('button=Publish').click();
+    browser.$('.gh-publishmenu.ember-view').click();
+    $('.gh-publishmenu.ember-view').waitForDisplayed(2000);
+    browser.$('.gh-btn.gh-btn-blue.gh-publishmenu-button.gh-btn-icon.ember-view').click();
+    browser.pause(2000);
     const contentField = $('.koenig-editor__editor');
     contentField.click();
 }
 
 function schedulePublishPage() {
-    browser.$('div=Publish').click();
-    $('div=Schedule it for later').waitForDisplayed(2000);
-    $('div=Schedule it for later').click()
-    browser.$('button=Schedule').click();
+    browser.$('.ember-view.ember-basic-dropdown-trigger.gh-btn.gh-btn-outline.gh-publishmenu-trigger').click();
+    $('div=Schedule it for later').waitForDisplayed(5000);
+    $('div=Schedule it for later').click();
+    browser.$('.gh-btn.gh-btn-blue.gh-publishmenu-button.gh-btn-icon.ember-view').click();
+    browser.pause(2000);
     const contentField = $('.koenig-editor__editor');
     contentField.click();
 }
@@ -569,7 +571,6 @@ Then('I create a random number of page with null title', () => {
 
 Then('I create a page with a low border title value', () => {
     let title = makeString(2000)
-    console.log(title)
     browser.url('/ghost/#/pages');
     browser.$('a=Pages').click();
     $('a=New page').waitForDisplayed(3000);
@@ -578,12 +579,10 @@ Then('I create a page with a low border title value', () => {
     browser.url('/ghost/#/pages');
     $('button=Leave').waitForDisplayed(5000);
     browser.$('button=Leave').click();
-
 })
 
 Then('I create a page with a high border title value', () => {
     let title = makeString(2005)
-    console.log(title)
     browser.url('/ghost/#/pages');
     browser.$('a=Pages').click();
     $('a=New page').waitForDisplayed(3000);
@@ -697,7 +696,7 @@ Then('I select a random page', () => {
     browser.url('/ghost/#/pages');
     $('.gh-list').waitForDisplayed(5000);
     const element=$('.gh-list')
-    const pages = element.$$('.gh-content-status-draft.gh-badge.gh-badge-purple.nowrap')
+    const pages = element.$$('.gh-content-status-draft.gh-badge.gh-badge-purple.nowrap');
     lenPages = pages.length;
     randomPage = getRandomInt(0, lenPages);
     pages[randomPage].click()
@@ -717,19 +716,23 @@ Then('I edit a page', () => {
 })
 
 Then('I unpublish a page', () => {
-    $('span=Update').waitForDisplayed(5000);
-    $('span=Update').click()
+    browser.pause(2000)
+    $('.gh-publishmenu.ember-view').waitForDisplayed(5000);
+    $('.gh-publishmenu.ember-view').click()
     $('div=Unpublished').waitForDisplayed(5000);
     $('div=Unpublished').click()
-    $('button=Unpublish').waitForDisplayed(2000);
-    browser.$('button=Unpublish').click();
+    browser.pause(2000)
+    $('.gh-btn.gh-btn-blue.gh-publishmenu-button.gh-btn-icon.ember-view').waitForDisplayed(5000);
+    browser.$('.gh-btn.gh-btn-blue.gh-publishmenu-button.gh-btn-icon.ember-view').click();
 })
 
 Then('I unpublish a schedule page', () => {
-    $('span=Scheduled').waitForDisplayed(5000);
-    $('span=Scheduled').click()
+    browser.pause(2000)
+    $('div=Scheduled').waitForDisplayed(5000);
+    $('div=Scheduled').click()
     $('div=Revert to draft').waitForDisplayed(5000);
     $('div=Revert to draft').click()
-    $('button=Unschedule').waitForDisplayed(2000);
-    browser.$('button=Unschedule').click();
+    browser.pause(2000)
+    $('.gh-btn.gh-btn-blue.gh-publishmenu-button.gh-btn-icon.ember-view').waitForDisplayed(2000);
+    browser.$('.gh-btn.gh-btn-blue.gh-publishmenu-button.gh-btn-icon.ember-view').click();
 })
