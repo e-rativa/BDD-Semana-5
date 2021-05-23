@@ -250,6 +250,73 @@ npm install
 
 ## Configuración del ambiente
 
+Para correr las pruebas primero necesitamos 3 pasos:
+
+- Instalar una instancia del Ghost versión 3.42.5 (Si aún no la tiene instalada).
+- Configurar el Ghost para que permita más de 100 intentos.
+- Correr las pruebas de cucumber aletoreas
+
+### 1. Instalar versión Ghost 3.42.5 
+
+Para isntalar la versión del ghost en la versión 3.42.5 por favor siga los siguientes pasos: 
+
+Abra una terminal en su máquina. Desde ella invocará el comando que descarga, de forma global, Ghost-CLI haciendo uso de su manejador de paquetes. En el caso de npm, escriba el comando:
+
+```bash
+npm install -g ghost-cli@latest
+```
+
+En el caso de yarn, escriba el comando:
+
+```bash
+yarn global add ghost-cli@latest
+```
+
+Una vez tenga en su computador instaladas las herramientas de Ghost-CLI, diríjase a un directorio vacío en su sistema de archivos, el cual dedicará exclusivamente a Ghost. Puede hacer esto desde el directorio en el que está ubicado actualmente con los siguientes comandos:
+
+```bash
+mkdir ghost - para crear el nuevo directorio;
+```
+
+Y después corra 
+
+```bash
+cd ghost 
+```
+
+
+Ahora que su terminal está ubicada en el directorio deseado, ejecute el comando de instalación con las herramientas que recién descargó:
+
+```bash
+ghost install 3.42.5 local
+```
+El resultado en la consola va a contener varias líneas confirmando el éxito de cada paso de la instalación, y una línea indicando que la instalación fue exitosa, como se muestra a continuación:
+
+![Ghost-Install](./img/ghost-install.png) 
+
+Para probar la aplicación y su funcionamiento, abra su navegador y escriba en la barra de navegación la siguiente dirección:
+
+[http://localhost:2368](http://localhost:2368)
+
+Y crear el usuario con las siguiente credenciales: 
+
+
+![Ghost-Credenciales](./img/credenciales.png) 
+
+Y con la contraseña **qwerty1234**  
+
+# 2. Configurar el ghost para evitar problemas con la sesión:
+
+En la carpeta donde previamente instalo el ghos dirijase al siguiente archivo y abralo en su editor de texto favorito.
+
+![Ghost-Config](./img/config.png) 
+
+En dicho archivo encontrará la propiedad spam cambie todas las propiedades **"lifetime"** de los hijos al valor de diez como se muestra a continuación:
+
+![Ghost-Spam](./img/spam.png) 
+
+# 3. Correr las pruebas de cucumber aletoreas:
+
 Para correr las pruebas de cucumber para las pruebas de datos y escenario aleatorios se accede a la carpeta **CucumberAleatorio** y correr el siguiente comando.
 
 
@@ -261,4 +328,7 @@ npm test
 
 **Nota**:
 
-La ejecucion de este comando puede tomar tiempo para finalizar su respuesta, debido al numero de pruebas
+La ejecucion de este comando puede tomar tiempo para finalizar su respuesta, debido al número de pruebas
+
+
+
