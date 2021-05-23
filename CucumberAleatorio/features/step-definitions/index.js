@@ -1,16 +1,88 @@
-var { Given } = require('cucumber');
-var { When } = require('cucumber');
-var { Then } = require('cucumber');
-var { expect } = require('chai');
-var { expect } = require('chai');
+var {
+    Given
+} = require('cucumber');
+var {
+    When
+} = require('cucumber');
+var {
+    Then
+} = require('cucumber');
+var {
+    expect
+} = require('chai');
 const Promise = require('bluebird');
-var faker  = require('faker');
+var faker = require('faker');
+var {
+    Before
+} = require('cucumber');
 
 function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min)) + min;
 }
+
+function borrarPost() {
+    $('.post-settings').waitForDisplayed(5000);
+    const settingsButton = $('.post-settings');
+    settingsButton.click();
+    $('.gh-btn.gh-btn-hover-red.gh-btn-icon.settings-menu-delete-button').waitForClickable(5000);
+    const deleteButton = $('.gh-btn.gh-btn-hover-red.gh-btn-icon.settings-menu-delete-button');
+    deleteButton.click();
+    $('.gh-btn.gh-btn-red.gh-btn-icon.ember-view').waitForDisplayed(5000);
+    const confirmButton = $('.gh-btn.gh-btn-red.gh-btn-icon.ember-view');
+    confirmButton.click();
+
+}
+
+function editarContenido() {
+    $('.gh-editor-title').waitForDisplayed(5000);
+    const inputElement1 = $('.koenig-editor__editor');
+    inputElement1.click();
+    inputElement1.keys(faker.fake('{{lorem.paragraphs}}'));
+}
+
+function editarTitulo() {
+    $('.gh-editor-title').waitForDisplayed(5000);
+    const inputTitulo = $('.gh-editor-title');
+    inputTitulo.click();
+    inputTitulo.keys(faker.fake('{{name.title}}'));
+}
+
+function editarPost() {
+    $('.gh-editor-title').waitForDisplayed(5000);
+    editarTitulo();
+    editarContenido();
+}
+
+Before(() => {
+    browser.pause(1000)
+    browser.url('/ghost/#/signout');
+    browser.pause(1000)
+});
+
+
+
+
+
+
+function publicarPost() {
+    const optionButton = $('.gh-publishmenu-trigger');
+    optionButton.click();
+
+    const publishButton = $('.gh-publishmenu-button');
+    publishButton.click();
+}
+Given('I go to ghost login screen', () => {
+    browser.url('/ghost/#/signin');
+});
+
+Then('I erase the post', () => {
+    editarPost();
+    publicarPost();
+});
+
+
 
 function createPage(title, content) {
     const titleField = $('.gh-editor-title.ember-text-area.gh-input.ember-view');
@@ -24,11 +96,11 @@ function createPage(title, content) {
 
 function makeString(charLimit) {
     let str = faker.lorem.paragraph()
-        while(str.length < charLimit){
-            str = str + faker.lorem.paragraph();
-        }
-        str = str.slice(0, charLimit)
-        return str
+    while (str.length < charLimit) {
+        str = str + faker.lorem.paragraph();
+    }
+    str = str.slice(0, charLimit)
+    return str
 }
 
 function publishPageImmediately() {
@@ -48,7 +120,7 @@ function schedulePublishPage() {
     contentField.click();
 }
 
-function cleanPage(){
+function cleanPage() {
     const titleField = $('.gh-editor-title.ember-text-area.gh-input.ember-view');
     titleField.click();
     titleField.setValue('')
@@ -57,11 +129,30 @@ function cleanPage(){
     contentField.click();
     contentField.setValue('')
 }
+When(/^I fill with (.*) and (.*)$/, (email, password) => {
+    $('input[id="ember8"]').waitForDisplayed(5000);
+    const inputElement = $('input[id="ember8"]');
+    inputElement.click();
+    inputElement.keys(email);
+
+    var passwordInput = $('input[id="ember10"]');
+    passwordInput.click();
+    passwordInput.keys(password)
+});
 
 Given('I go to ghost home screen', () => {
     browser.url('/ghost/#/signin');
 });
 
+When('I select a post random', () => {
+    browser.url('/ghost/#/posts');
+    $('.posts-list.gh-list').waitForClickable(5000);
+    const indexRandomPost = getRandomInt(1, 6);
+    const listaPost = $('.posts-list.gh-list').$$('li')
+    browser.pause(1000);
+    listaPost[indexRandomPost].click();
+
+});
 Given('I go to Ghost login', () => {
     browser.url('/ghost/#/signin');
     if ($('button=Cerrar').isDisplayed()) {
@@ -73,7 +164,15 @@ Given(/^I wait for (.*) second$/, function (seconds) {
     return Promise.resolve().delay(seconds * 1000)
 });
 
-When('I login with correct data',()=>{
+When(/^I fill email with (.*)$/, (email) => {
+
+    const inputElement = $('input[name="email"]');
+    inputElement.click();
+    inputElement.keys(email);
+
+});
+
+When('I login with correct data', () => {
     $('input[id="ember8"]').waitForDisplayed(5000);
     const inputElement = $('input[id="ember8"]');
     inputElement.click();
@@ -87,23 +186,23 @@ When('I try to login', () => {
     $('button[id="ember12"]').click();
 });
 
-When('I got to settings-general',()=>{
+When('I got to settings-general', () => {
     browser.url('/ghost/#/settings/general');
 });
 
-When('I got to settings-design',()=>{
+When('I got to settings-design', () => {
     browser.url('/ghost/#/settings/design');
 });
 
-When('I got to site',()=>{
+When('I got to site', () => {
     browser.url('/ghost/#/site');
 });
 
-When('I got to settings-labs',()=>{
+When('I got to settings-labs', () => {
     browser.url('/ghost/#/settings/labs');
 });
 
-When('I got to logout',()=>{
+When('I got to logout', () => {
     browser.url('/ghost/#/signout');
 });
 
@@ -112,7 +211,7 @@ Then('I try to expand to edit title', () => {
     inputElement.click();
 });
 
-Then('I try to erase the title name settings general',() =>{
+Then('I try to erase the title name settings general', () => {
     const inputElementTitle = $('.gh-input');
     inputElementTitle.click();
     inputElementTitle.setValue('');
@@ -144,7 +243,7 @@ Then('I try to save config private site', () => {
     inputElement.click();
 });
 
-Then('I try to erase the title settings design',() =>{
+Then('I try to erase the title settings design', () => {
     const inputElement = $('.ember-text-field');
     inputElement.click();
     inputElement.setValue('');
@@ -176,9 +275,9 @@ Then('I try to save config enable members', () => {
     inputElement.click();
 });
 
-Then(/^I do random event settings (.*)$/,(event)=>{
-    console.warn('Evento : ',event);
-    switch(event){
+Then(/^I do random event settings (.*)$/, (event) => {
+    console.warn('Evento : ', event);
+    switch (event) {
         case 'general':
             browser.url('/ghost/#/settings/general');
             break;
@@ -194,61 +293,124 @@ Then(/^I do random event settings (.*)$/,(event)=>{
         case 'labs':
             browser.url('/ghost/#/settings/labs');
             break;
-        default:'Sin opcion de evento aleatorio'
-        break;
+        default:
+            'Sin opcion de evento aleatorio'
+            break;
     }
-   });
-
-Then(/^I do random event post (.*)$/,(event)=>{
-console.warn('Evento : ',event);
-switch(event){
-    case 'post-draft':
-        browser.url('/ghost/#/posts?type=draft');
-        break;
-    case 'post-scheduled':
-        browser.url('/ghost/#/posts?type=scheduled');
-        break;
-    case 'post-published':
-        browser.url('/ghost/#/posts?type=published');
-        break;
-    case 'post':
-        browser.url('/ghost/#/posts');
-        break;
-    default:'Sin opcion de evento aleatorio'
-    break;
-}
 });
 
-Then(/^I do random event manage (.*)$/,(event)=>{
-console.warn('Evento : ',event);
-switch(event){
-    case 'posts':
-        browser.url('/ghost/#/posts');
-        break;
-    case 'pages':
-        browser.url('/ghost/#/pages');
-        break;
-    case 'tags':
-        browser.url('/ghost/#/tags');
-        break;
-    case 'staff':
-        browser.url('/ghost/#/staff');
-        break;
-    default:'Sin opcion de evento aleatorio'
-    break;
-}
+Then(/^I do a event randomly on post (.*)$/, (intento) => {
+
+    const evento = getRandomInt(1, 4)
+
+    switch (evento) {
+        case 1:
+            borrarPost();
+            break;
+        case 2:
+            editarTitulo();
+            publicarPost();
+            break;
+        case 3:
+            editarContenido();
+            publicarPost();
+            break;
+        case 4:
+            editarPost();
+            publicarPost();
+            break;
+    }
+
 });
 
-Then(/^I create a page with (.*) and (.*)$/,(title,content)=>{
-browser.$('a=Pages').click();
-$('a=New page').waitForDisplayed(2000);
-browser.$('a=New page').click();
-
-createPage(title, content)
+When('I click on forgot password', () => {
+    $('button[id="ember11"]').waitForDisplayed(5000);
+    const buttonForgotPassword = $('button[id="ember11"]');
+    buttonForgotPassword.click();
 });
 
-Then('I go back to page list',()=>{
-browser.url('/ghost/#/pages');
+When(/^I create a post with random data (.*)$/, (intento) => {
+    browser.url('/ghost/#/editor/post');
+    editarPost();
+    browser.pause(2000);
+    publicarPost();
+    browser.pause(2000);
+});
+
+
+
+Then(/^I fill with (.*) with naugthy data$/, (email) => {
+    const inputElement = $('input[id="ember8"]');
+    inputElement.click();
+    inputElement.keys(email);
+
+});
+
+Then(/^I confirm error text for (.*)$/, (tipo) => {
+    $('.main-error').waitForDisplayed(5000);
+    let error = '';
+    if (tipo === 'forgotPassword') {
+        error = 'We need your email address to reset your password!'
+    } else if (tipo === 'login') {
+        error = 'There is no user with that email address';
+    }
+
+    const alertText = browser.$('.main-error').getText();
+    expect(alertText).to.include(error);
+});
+
+Then(/^I do random event post (.*)$/, (event) => {
+    console.warn('Evento : ', event);
+    switch (event) {
+        case 'post-draft':
+            browser.url('/ghost/#/posts?type=draft');
+            break;
+        case 'post-scheduled':
+            browser.url('/ghost/#/posts?type=scheduled');
+            break;
+        case 'post-published':
+            browser.url('/ghost/#/posts?type=published');
+            break;
+        case 'post':
+            browser.url('/ghost/#/posts');
+            break;
+        default:
+            'Sin opcion de evento aleatorio'
+            break;
+    }
+});
+
+Then(/^I do random event manage (.*)$/, (event) => {
+    console.warn('Evento : ', event);
+    switch (event) {
+        case 'posts':
+            browser.url('/ghost/#/posts');
+            break;
+        case 'pages':
+            browser.url('/ghost/#/pages');
+            break;
+        case 'tags':
+            browser.url('/ghost/#/tags');
+            break;
+        case 'staff':
+            browser.url('/ghost/#/staff');
+            break;
+        default:
+            'Sin opcion de evento aleatorio'
+            break;
+    }
+});
+
+Then(/^I create a page with (.*) and (.*)$/, (title, content) => {
+    browser.$('a=Pages').click();
+    $('a=New page').waitForDisplayed(2000);
+    browser.$('a=New page').click();
+
+    createPage(title, content)
+});
+
+Then('I go back to page list', () => {
+    browser.url('/ghost/#/pages');
 });
 
 Then('I logout', () => {
@@ -256,8 +418,8 @@ Then('I logout', () => {
 });
 
 Then('I create a random number of page with random values', () => {
-    randomPage = getRandomInt(1,10);
-    for (i=0; i<randomPage; i++){
+    randomPage = getRandomInt(1, 10);
+    for (i = 0; i < randomPage; i++) {
         browser.url('/ghost/#/pages');
         browser.$('a=Pages').click();
         $('a=New page').waitForDisplayed(2000);
@@ -267,8 +429,8 @@ Then('I create a random number of page with random values', () => {
 })
 
 Then('I create a random number of page with null title', () => {
-    randomPage = getRandomInt(1,10);
-    for (i=0; i<randomPage; i++){
+    randomPage = getRandomInt(1, 10);
+    for (i = 0; i < randomPage; i++) {
         browser.url('/ghost/#/pages');
         browser.$('a=Pages').click();
         $('a=New page').waitForDisplayed(3000);
@@ -277,7 +439,7 @@ Then('I create a random number of page with null title', () => {
     }
 })
 
-Then('I create a page with a low border title value', () => { 
+Then('I create a page with a low border title value', () => {
     let title = makeString(2000)
     console.log(title)
     browser.url('/ghost/#/pages');
@@ -291,7 +453,7 @@ Then('I create a page with a low border title value', () => {
 
 })
 
-Then('I create a page with a high border title value', () => { 
+Then('I create a page with a high border title value', () => {
     let title = makeString(2005)
     console.log(title)
     browser.url('/ghost/#/pages');
@@ -305,7 +467,7 @@ Then('I create a page with a high border title value', () => {
 })
 
 
-Then('I create a page with a low border slug value', () => { 
+Then('I create a page with a low border slug value', () => {
     let title = makeString(191)
     browser.url('/ghost/#/pages');
     browser.$('a=Pages').click();
@@ -314,7 +476,7 @@ Then('I create a page with a low border slug value', () => {
     createPage(title, faker.lorem.words())
 })
 
-Then('I create a page with a high border slug value', () => { 
+Then('I create a page with a high border slug value', () => {
     let title = makeString(192)
     browser.url('/ghost/#/pages');
     browser.$('a=Pages').click();
@@ -323,7 +485,7 @@ Then('I create a page with a high border slug value', () => {
     createPage(title, faker.lorem.words())
 })
 
-Then('I create a page title with 1000 characters', () => { 
+Then('I create a page title with 1000 characters', () => {
     let title = makeString(1000)
     browser.url('/ghost/#/pages');
     browser.$('a=Pages').click();
@@ -335,18 +497,18 @@ Then('I create a page title with 1000 characters', () => {
     browser.$('button=Leave').click();
 })
 
-Then(/^I create a page with naughty (.*) and (.*)$/,(title,content)=>{
+Then(/^I create a page with naughty (.*) and (.*)$/, (title, content) => {
     browser.$('a=Pages').click();
     $('a=New page').waitForDisplayed(2000);
     browser.$('a=New page').click();
 
     createPage(title, content)
 
-   });
+});
 
 Then('I create a random number of page with random values and publish inmediatly', () => {
-    randomPage = getRandomInt(1,10);
-    for (i=0; i<randomPage; i++){
+    randomPage = getRandomInt(1, 10);
+    for (i = 0; i < randomPage; i++) {
         browser.url('/ghost/#/pages');
         browser.$('a=Pages').click();
         $('a=New page').waitForDisplayed(2000);
@@ -357,8 +519,8 @@ Then('I create a random number of page with random values and publish inmediatly
 })
 
 Then('I create a random number of page with random values and schedule publish', () => {
-    randomPage = getRandomInt(1,10);
-    for (i=0; i<randomPage; i++){
+    randomPage = getRandomInt(1, 10);
+    for (i = 0; i < randomPage; i++) {
         browser.url('/ghost/#/pages');
         browser.$('a=Pages').click();
         $('a=New page').waitForDisplayed(2000);
@@ -403,7 +565,7 @@ Then('I see a error publish message', () => {
     expect(alertText).to.include('Saving failed: Title cannot be longer than 255 characters.');
 })
 
-Then('I select a random page',()=>{
+Then('I select a random page', () => {
     browser.url('/ghost/#/pages');
     $('.gh-list').waitForDisplayed(5000);
     const element=$('.gh-list')

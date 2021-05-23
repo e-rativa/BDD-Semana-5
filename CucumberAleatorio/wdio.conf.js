@@ -88,7 +88,7 @@ exports.config = {
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
     // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
     // gets prepended directly.
-    baseUrl: 'https://3d9074f0bcbd.ngrok.io',
+    baseUrl: 'http://localhost:2368',
     //
     // Default timeout for all waitFor* commands.
     waitforTimeout: 10000,
@@ -105,7 +105,7 @@ exports.config = {
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
     services: ['selenium-standalone'],
-    
+
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
     // see also: https://webdriver.io/docs/frameworks.html
@@ -121,25 +121,25 @@ exports.config = {
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter.html
     reporters: ['spec'],
- //
+    //
     // If you are using Cucumber you need to specify the location of your step definitions.
     cucumberOpts: {
-        require: ['./features/step-definitions'],        // <string[]> (file/dir) require files before executing features
-        backtrace: false,   // <boolean> show full backtrace for errors
-        requireModule: [],  // <string[]> ("extension:module") require files with the given EXTENSION after requiring MODULE (repeatable)
-        dryRun: false,      // <boolean> invoke formatters without executing steps
-        failFast: false,    // <boolean> abort the run on first failure
+        require: ['./features/step-definitions'], // <string[]> (file/dir) require files before executing features
+        backtrace: false, // <boolean> show full backtrace for errors
+        requireModule: [], // <string[]> ("extension:module") require files with the given EXTENSION after requiring MODULE (repeatable)
+        dryRun: false, // <boolean> invoke formatters without executing steps
+        failFast: false, // <boolean> abort the run on first failure
         format: ['pretty'], // <string[]> (type[:path]) specify the output format, optionally supply PATH to redirect formatter output (repeatable)
-        colors: true,       // <boolean> disable colors in formatter output
-        snippets: true,     // <boolean> hide step definition snippets for pending steps
-        source: true,       // <boolean> hide source uris
-        profile: [],        // <string[]> (name) specify the profile to use
-        strict: false,      // <boolean> fail if there are any undefined or pending steps
-        tagExpression: '',  // <string> (expression) only execute the features or scenarios with tags matching the expression
-        timeout: 60000,     // <number> timeout for step definitions
+        colors: true, // <boolean> disable colors in formatter output
+        snippets: true, // <boolean> hide step definition snippets for pending steps
+        source: true, // <boolean> hide source uris
+        profile: [], // <string[]> (name) specify the profile to use
+        strict: false, // <boolean> fail if there are any undefined or pending steps
+        tagExpression: '', // <string> (expression) only execute the features or scenarios with tags matching the expression
+        timeout: 60000, // <number> timeout for step definitions
         ignoreUndefinedDefinitions: false, // <boolean> Enable this config to treat undefined definitions as warnings.
     },
-    
+
     //
     // =====
     // Hooks
@@ -209,7 +209,7 @@ exports.config = {
      */
     // afterFeature: function (uri, feature, scenarios) {
     // },
-    
+
     /**
      * Runs after a WebdriverIO command gets executed
      * @param {String} commandName hook command name
@@ -247,10 +247,10 @@ exports.config = {
     // onComplete: function(exitCode, config, capabilities, results) {
     // },
     /**
-    * Gets executed when a refresh happens.
-    * @param {String} oldSessionId session ID of the old session
-    * @param {String} newSessionId session ID of the new session
-    */
+     * Gets executed when a refresh happens.
+     * @param {String} oldSessionId session ID of the old session
+     * @param {String} newSessionId session ID of the new session
+     */
     //onReload: function(oldSessionId, newSessionId) {
     //}
 }

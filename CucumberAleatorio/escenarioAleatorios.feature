@@ -663,25 +663,8 @@ Scenario: I create a random post, schedule publish, edit, unpublish
     And I wait for 2 second
     Then I logout
     And I wait for 2 second
- Scenario Outline: Recuperar contraseña datos apriori raros
-    Given I go to ghost login screen
-    When I fill with <email> with naugthy data
-    And I click on forgot password
-    And I wait for 1 second
-    Then I confirm error text for forgotPassword
-    And I wait for 1 second
-    And I logout
 
-Examples:
-|email|
-|/dev/null; touch /tmp/blns.fail ; echo|
-|␢|
-|1E02|
-|0/0|
-|部落格|
-|NULL| 
 
- 
  Scenario Outline: Login Datos apriori
     Given I go to ghost login screen
     When I fill with <email> and <password>
@@ -700,7 +683,7 @@ Examples:
 |bshuxsmith4@istockphoto.com|qL0aixqOs|
 |ofernandes5@zdnet.com|vNJ6Qhg4|
 
-Scenario Outline: Crear Post datos aletoreos
+ Scenario Outline: Crear Post datos aletoreos
     Given I go to ghost login screen
     When I login with correct data
     And I try to login
@@ -718,15 +701,16 @@ Examples:
 |5|
 |6|
 
+
  Scenario Outline: Posts eventos aleatoreos
     Given I go to ghost login screen
     When I login with correct data
     And I wait for 1 second
     And I try to login
     And I wait for 3 second
-    And I select a post random
+    And I select a random to post
     And I wait for 3 second
-    And I do a event randomly on post <try>
+    And I do random event <try>
     And I wait for 3 second
     Then I logout
 
@@ -744,3 +728,25 @@ Examples:
  |10|
  |11|
  |12|
+
+
+
+ Scenario Outline: Recuperar contraseña datos apriori raros
+    Given I go to ghost login screen
+    When I fill with <email> with naugthy data
+    And I click on forgot password
+    And I wait for 1 second
+    Then I confirm error text for forgotPassword
+    And I wait for 1 second
+    And I logout
+
+Examples:
+|email|
+|/dev/null; touch /tmp/blns.fail ; echo|
+|␢|
+|1E02|
+|0/0|
+|部落格|
+|NULL| 
+
+
