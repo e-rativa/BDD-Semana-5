@@ -231,3 +231,34 @@ node index.js
 **Nota**:
 
 Este comando se puede demorar si el número de imágenes es muy grande.
+
+---
+# Cucumber - Pruebas con datos y escenarios aleatorios.
+
+## Instalación Cucumber
+
+Para instalar si aún no lo tiene instalado el resembleJs desplazarse a la carpeta CucumberAleatorio con el comando 
+
+```bash
+cd CucumberAleatorio
+```
+Después de esto correr el siguiente comando.
+
+```bash
+npm install
+```
+
+## Configuración del ambiente
+
+Para correr las pruebas de cucumber para las pruebas de datos y escenario aleatorios se accede a la carpeta **CucumberAleatorio** y correr el siguiente comando.
+
+
+**Correr cucumber**
+
+```bash
+npm test
+```
+
+**Nota**:
+
+La ejecucion de este comando puede tomar tiempo para finalizar su respuesta, debido al numero de pruebas
