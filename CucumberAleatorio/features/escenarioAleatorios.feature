@@ -165,3 +165,504 @@ Examples:
  |code-injection|
  |integrations|
  |labs|
+
+
+
+Feature: Create page
+    As an user I want to create pages into ghost
+
+## 1
+Scenario Outline: Create correct page
+    Given I go to ghost home screen
+    And I wait for 2 second
+    When  I login with correct data
+    And I wait for 1 second
+    And I try to login
+    And I wait for 2 second
+    Then I create a page with <title> and <content>
+    And I wait for 2 second
+    Then I go back to page list
+    And I wait for 1 second
+    Then I logout
+    And I wait for 2 second
+
+Examples:
+
+| title       | content                                                                                                              |
+| Transcof    | Dilation of Left Common Carotid Artery, Bifurcation, with Three Intraluminal Devices, Percutaneous Approach          |
+| Voyatouch   | Alteration of Right Elbow Region with Synthetic Substitute, Open Approach                                            |
+| Veribet     | Revision of Autologous Tissue Substitute in Right Rib, Percutaneous Approach                                         |
+| Solarbreeze | Introduction of Electrolytic and Water Balance Substance into Lower GI, Via Natural or Artificial Opening Endoscopic |
+| Bytecard    | Inspection of Penis, Percutaneous Approach                                                                           |
+| Duobam      | Excision of Left Eye, Percutaneous Approach                                                                          |
+| Redhold     | Repair Right Cephalic Vein, Open Approach                                                                            |
+
+
+
+## 2
+Scenario: Create random number of page with random values
+    Given I go to ghost home screen
+    And I wait for 2 second
+    When  I login with correct data
+    And I wait for 1 second
+    And I try to login
+    And I wait for 2 second
+    Then I create a random number of page with random values
+    And I wait for 1 second
+    Then I logout
+    And I wait for 2 second
+
+## 3
+Scenario: Create random number of page with null title
+    Given I go to ghost home screen
+    And I wait for 2 second
+    When  I login with correct data
+    And I wait for 1 second
+    And I try to login
+    And I wait for 2 second
+    Then I create a random number of page with null title
+    And I wait for 1 second
+    Then I logout
+    And I wait for 2 second
+
+## 4
+Scenario: Create a page with a low border title value
+    Given I go to ghost home screen
+    And I wait for 2 second
+    When  I login with correct data
+    And I wait for 1 second
+    And I try to login
+    And I wait for 2 second
+    Then I create a page with a low border title value
+    And I wait for 1 second
+
+    Then I logout
+    And I wait for 2 second
+
+## 5
+Scenario: Create a page with a high border title value
+    Given I go to ghost home screen
+    And I wait for 2 second
+    When  I login with correct data
+    And I wait for 1 second
+    And I try to login
+    And I wait for 2 second
+    Then I create a page with a high border title value
+    And I wait for 4 second
+    Then I logout
+    And I wait for 2 second
+
+## 6
+Scenario: Create a page with a low border slug value
+    Given I go to ghost home screen
+    And I wait for 2 second
+    When  I login with correct data
+    And I wait for 1 second
+    And I try to login
+    And I wait for 2 second
+    Then I create a page with a low border slug value
+    And I wait for 4 second
+    Then I logout
+    And I wait for 2 second
+
+## 7
+Scenario: Create a page with a high border slug value
+    Given I go to ghost home screen
+    And I wait for 2 second
+    When  I login with correct data
+    And I wait for 1 second
+    And I try to login
+    And I wait for 2 second
+    Then I create a page with a high border slug value
+    And I wait for 4 second
+    Then I logout
+    And I wait for 2 second
+
+##8 
+
+Scenario Outline: Create correct page
+    Given I go to ghost home screen
+    And I wait for 2 second
+    When  I login with correct data
+    And I wait for 1 second
+    And I try to login
+    And I wait for 2 second
+    Then I create a page with <title> and <content>
+    And I wait for 2 second
+    Then I go back to page list
+    And I wait for 1 second
+    Then I logout
+    And I wait for 2 second
+
+Examples:
+
+|title|content|
+|・(￣∀￣)・:*:|NULL|
+|../../../../../../../../../../../etc/hosts|᠎|
+|​|１２３|
+|"''''"'"|"''''"'"|
+|123456|사회과학원 어학연구소|
+|・(￣∀￣)・:*:|<svg><script>0<1>alert('XSS')</script>|
+|åß∂ƒ©˙∆˚¬…æ|𠜎𠜱𠝹𠱓𠱸𠲖𠳏|
+|‪‪test‪|<img src=x onerror=alert('hi') />|
+|₀₁₂|울란바토르|
+
+## 9
+Scenario: Create a page with random values and publish inmediatly
+    Given I go to ghost home screen
+    And I wait for 2 second
+    When  I login with correct data
+    And I wait for 1 second
+    And I try to login
+    And I wait for 2 second
+    Then I create a random number of page with random values and publish inmediatly
+    And I wait for 1 second
+    Then I logout
+    And I wait for 2 second
+
+## 10
+Scenario: I create a random number of page with random values and schedule publish
+    Given I go to ghost home screen
+    And I wait for 2 second
+    When  I login with correct data
+    And I wait for 1 second
+    And I try to login
+    And I wait for 2 second
+    Then I create a random number of page with random values and schedule publish
+    And I wait for 1 second
+    Then I logout
+    And I wait for 2 second
+
+## 11
+Scenario: I create a page with limit border title and publish inmediatly
+    Given I go to ghost home screen
+    And I wait for 2 second
+    When  I login with correct data
+    And I wait for 1 second
+    And I try to login
+    And I wait for 2 second
+    Then I create a page with a limit title
+    And I wait for 4 second
+    Then I publish a page
+    Then I logout
+    And I wait for 2 second
+
+## 12
+Scenario: I create a page with high border title and publish inmediatly
+    Given I go to ghost home screen
+    And I wait for 2 second
+    When  I login with correct data
+    And I wait for 1 second
+    And I try to login
+    And I wait for 2 second
+    Then I create a page with a limit high title
+    And I wait for 4 second
+    Then I logout
+    And I wait for 2 second
+
+## 13
+Scenario: I delete a random page
+    Given I go to ghost home screen
+    And I wait for 2 second
+    When  I login with correct data
+    And I wait for 1 second
+    And I try to login
+    And I wait for 2 second
+    Then I select a random page
+    And I wait for 4 second
+    Then I delete a page
+    And I wait for 2 second
+    Then I logout
+    And I wait for 2 second
+
+## 14
+Scenario: I edit a random page
+    Given I go to ghost home screen
+    And I wait for 2 second
+    When  I login with correct data
+    And I wait for 1 second
+    And I try to login
+    And I wait for 2 second
+    Then I select a random page
+    And I wait for 4 second
+    Then I edit a page
+    And I wait for 2 second
+    Then I logout
+    And I wait for 2 second
+
+## 15
+Scenario: I edit and delete a random page
+    Given I go to ghost home screen
+    And I wait for 2 second
+    When  I login with correct data
+    And I wait for 1 second
+    And I try to login
+    And I wait for 2 second
+    Then I select a random page
+    And I wait for 4 second
+    Then I edit a page
+    And I wait for 2 second
+    Then I delete a page
+    Then I logout
+    And I wait for 2 second
+
+## 16
+Scenario: I edit and publish immediately a page
+    Given I go to ghost home screen
+    And I wait for 2 second
+    When  I login with correct data
+    And I wait for 1 second
+    And I try to login
+    And I wait for 2 second
+    Then I select a random page
+    And I wait for 4 second
+    Then I edit a page
+    And I wait for 2 second
+    Then I publish a page
+    Then I logout
+    And I wait for 2 second
+
+## 17
+Scenario: I edit and schedule page
+    Given I go to ghost home screen
+    And I wait for 2 second
+    When  I login with correct data
+    And I wait for 1 second
+    And I try to login
+    And I wait for 2 second
+    Then I select a random page
+    And I wait for 4 second
+    Then I edit a page
+    And I wait for 2 second
+    Then I publish a schedule page
+    Then I logout
+    And I wait for 2 second
+
+## 18
+Scenario: I edit a random page, publish immediately and delete a page
+    Given I go to ghost home screen
+    And I wait for 2 second
+    When  I login with correct data
+    And I wait for 1 second
+    And I try to login
+    And I wait for 2 second
+    Then I select a random page
+    And I wait for 4 second
+    Then I edit a page
+    And I wait for 2 second
+    Then I publish a page
+    And I wait for 2 second
+    Then I delete a page
+    And I wait for 2 second
+    Then I logout
+    And I wait for 2 second
+
+## 19
+Scenario: I edit a random page, publish schedule and delete a page
+    Given I go to ghost home screen
+    And I wait for 2 second
+    When  I login with correct data
+    And I wait for 1 second
+    And I try to login
+    And I wait for 2 second
+    Then I select a random page
+    And I wait for 4 second
+    Then I edit a page
+    And I wait for 2 second
+    Then I publish a schedule page
+    And I wait for 2 second
+    Then I delete a page
+    And I wait for 2 second
+    Then I logout
+    And I wait for 2 second
+
+## 20
+Scenario: I select a random post publish immediately and unpublish a page
+    Given I go to ghost home screen
+    And I wait for 2 second
+    When  I login with correct data
+    And I wait for 1 second
+    And I try to login
+    And I wait for 2 second
+    Then I select a random page
+    And I wait for 2 second
+    Then I publish a page
+    And I wait for 2 second
+    Then I unpublish a page
+    And I wait for 2 second
+    Then I logout
+    And I wait for 2 second
+
+## 21
+Scenario: I select a random post publish a schedule and unpublish a page
+    Given I go to ghost home screen
+    And I wait for 2 second
+    When  I login with correct data
+    And I wait for 1 second
+    And I try to login
+    And I wait for 2 second
+    Then I select a random page
+    And I wait for 2 second
+    Then I publish a schedule page
+    And I wait for 2 second
+    Then I unpublish a schedule page
+    And I wait for 2 second
+    Then I logout
+    And I wait for 2 second
+
+## 22
+Scenario: I create a random post and edit a page
+    Given I go to ghost home screen
+    And I wait for 2 second
+    When  I login with correct data
+    And I wait for 1 second
+    And I try to login
+    And I wait for 2 second
+    Then I create a page with a low border slug value
+    And I wait for 2 second
+    Then I edit a page
+    And I wait for 2 second
+    Then I logout
+    And I wait for 2 second
+
+## 23
+Scenario: I create a random post and edit a page and publish immediately
+    Given I go to ghost home screen
+    And I wait for 2 second
+    When  I login with correct data
+    And I wait for 1 second
+    And I try to login
+    And I wait for 2 second
+    Then I create a page with a low border slug value
+    And I wait for 2 second
+    Then I edit a page
+    And I wait for 2 second
+    Then I publish a page
+    And I wait for 2 second
+    Then I logout
+    And I wait for 2 second
+
+## 24
+Scenario: I create a random post and edit a page and schedule page
+    Given I go to ghost home screen
+    And I wait for 2 second
+    When  I login with correct data
+    And I wait for 1 second
+    And I try to login
+    And I wait for 2 second
+    Then I create a page with a low border slug value
+    And I wait for 2 second
+    Then I edit a page
+    And I wait for 2 second
+    Then I publish a schedule page
+    And I wait for 2 second
+    Then I logout
+    And I wait for 2 second
+
+## 25
+Scenario: I create a random post and edit a page and publish immediately and unpublish
+    Given I go to ghost home screen
+    And I wait for 2 second
+    When  I login with correct data
+    And I wait for 1 second
+    And I try to login
+    And I wait for 2 second
+    Then I create a page with a low border slug value
+    And I wait for 2 second
+    Then I edit a page
+    And I wait for 2 second
+    Then I publish a page
+    And I wait for 2 second
+    Then I unpublish a page
+    And I wait for 2 second
+    Then I logout
+    And I wait for 2 second
+
+## 26
+Scenario: I create a random post and edit a page, schedule and unplublish a page
+    Given I go to ghost home screen
+    And I wait for 2 second
+    When  I login with correct data
+    And I wait for 1 second
+    And I try to login
+    And I wait for 2 second
+    Then I create a page with a low border slug value
+    And I wait for 2 second
+    Then I edit a page
+    And I wait for 2 second
+    Then I publish a schedule page
+    And I wait for 2 second
+    Then I unpublish a schedule page
+    And I wait for 2 second
+    Then I logout
+    And I wait for 2 second
+
+## 27
+Scenario: I create a random post and delete it
+    Given I go to ghost home screen
+    And I wait for 2 second
+    When  I login with correct data
+    And I wait for 1 second
+    And I try to login
+    And I wait for 2 second
+    Then I create a page with a low border slug value
+    And I wait for 2 second
+    Then I delete a page
+    And I wait for 2 second
+    Then I logout
+    And I wait for 2 second
+
+## 28
+Scenario: I create a random post, edit and delete it
+    Given I go to ghost home screen
+    And I wait for 2 second
+    When  I login with correct data
+    And I wait for 1 second
+    And I try to login
+    And I wait for 2 second
+    Then I create a page with a low border slug value
+    And I wait for 2 second
+    Then I edit a page
+    And I wait for 2 second
+    Then I delete a page
+    And I wait for 2 second
+    Then I logout
+    And I wait for 2 second
+
+## 29
+Scenario: I create a random post, publish, edit, unpublish
+    Given I go to ghost home screen
+    And I wait for 2 second
+    When  I login with correct data
+    And I wait for 1 second
+    And I try to login
+    And I wait for 2 second
+    Then I create a page with a low border slug value
+    And I wait for 2 second
+    Then I publish a page
+    And I wait for 2 second
+    Then I edit a page
+    And I wait for 2 second
+    Then I unpublish a page
+    And I wait for 2 second
+    Then I logout
+    And I wait for 2 second
+
+## 30
+Scenario: I create a random post, schedule publish, edit, unpublish
+    Given I go to ghost home screen
+    And I wait for 2 second
+    When  I login with correct data
+    And I wait for 1 second
+    And I try to login
+    And I wait for 2 second
+    Then I create a page with a low border slug value
+    And I wait for 2 second
+    Then I publish a schedule page
+    And I wait for 2 second
+    Then I edit a page
+    And I wait for 2 second
+    Then I unpublish a schedule page
+    And I wait for 2 second
+    Then I logout
+    And I wait for 2 second
