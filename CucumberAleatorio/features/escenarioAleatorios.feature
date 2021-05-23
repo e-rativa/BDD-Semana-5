@@ -744,3 +744,185 @@ Examples:
  |10|
  |11|
  |12|
+
+## Elkin - Start
+  Scenario Outline: Users validos (Email 18 caracteres) (Roles Admin, author, contributor y editor)
+    Given I go to home screen
+    And I wait for 2 second
+    When I login with correct data
+    And I wait for 2 second
+    And I try to login
+    And I wait for 2 second
+    And I go to staff screen
+    And I wait for 2 second
+    And I press invite people
+    And I wait for 2 second  
+    And I filled with email <char> and <role>
+    And I wait for 2 second
+    And I press send button
+    And I wait for 2 second
+    Then I expect to see alert
+    And I wait for 2 second
+    And I logout
+    And I wait for 2 second
+
+Examples:
+| char | role | 
+| 15  | 0 |
+| 15  | 1 |
+| 15  | 2 |
+| 15  | 3 |
+
+Scenario Outline: Users invalidos (Email 191 caracteres) (Roles Admin, author, contributor y editor)
+    Given I go to home screen
+    And I wait for 2 second
+    When I login with correct data
+    And I wait for 2 second
+    And I try to login
+    And I wait for 2 second
+    And I go to staff screen
+    And I wait for 2 second
+    And I press invite people
+    And I wait for 2 second  
+    And I filled with email <char> and <role>
+    And I wait for 2 second
+    And I press send button
+    And I wait for 2 second
+    Then I expect to see button alert
+    And I wait for 2 second
+    And I logout
+    And I wait for 2 second
+
+Examples:
+| char | role | 
+| 191  | 0 |
+| 191  | 1 |
+| 191  | 2 |
+| 191  | 3 |
+| 192  | 0 |
+| 192  | 1 |
+| 192  | 2 |
+| 192  | 3 |
+
+Scenario Outline: Users Invalidos (Email vacio) (Roles Admin, author, contributor y editor)
+    Given I go to home screen
+    And I wait for 2 second
+    When I login with correct data
+    And I wait for 2 second
+    And I try to login
+    And I wait for 2 second
+    And I go to staff screen
+    And I wait for 2 second
+    And I press invite people
+    And I wait for 2 second  
+    And I filled with empty email and <role>
+    And I wait for 2 second
+    And I press send button
+    And I wait for 2 second
+    Then I expect to see button alert
+    And I wait for 2 second
+    And I logout
+    And I wait for 2 second
+
+Examples:
+| role | 
+| 0 |
+| 1 |
+| 2 |
+| 3 |
+
+Scenario Outline: Update Invalido (name vacio) (Roles Admin, author, contributor y editor)
+    Given I go to home screen
+    And I wait for 2 second
+    When I login with correct data
+    And I wait for 2 second
+    And I try to login
+    And I wait for 2 second
+    And I go to staff screen
+    And I wait for 2 second
+    And I press ghost user
+    And I wait for 2 second
+    And I try with empty name and <role>
+    And I wait for 2 second
+    And I press save button
+    And I wait for 2 second
+    Then I expect to see button alert
+    And I wait for 2 second
+    Then I logout
+    And I wait for 2 second
+    
+Examples:
+| role | 
+| 0 |
+| 1 |
+| 2 |
+| 3 |
+
+Scenario Outline: Update valido (name 20, 191 characters) (Roles Admin, author, contributor y editor)
+    Given I go to home screen
+    And I wait for 2 second
+    When I login with correct data
+    And I wait for 2 second
+    And I try to login
+    And I wait for 2 second
+    And I go to staff screen
+    And I wait for 2 second
+    And I press ghost user
+    And I wait for 2 second
+    And I try with name <char> and <role>
+    And I wait for 2 second
+    And I press save button
+    And I wait for 2 second
+    And I go to staff screen
+    And I wait for 2 second
+    And I press new ghost user
+    And I wait for 2 second
+    And I filled ghost data
+    And I press save button
+    And I wait for 2 second
+    And I go to staff screen
+    And I wait for 2 second
+    Then I logout
+    And I wait for 2 second
+    
+
+Examples:
+
+| char | role | 
+| 15  | 0 |
+| 15  | 1 |
+| 15  | 2 |
+| 15  | 3 |
+| 191  | 0 |
+| 191  | 1 |
+| 191  | 2 |
+| 191  | 3 |
+
+Scenario Outline: Update invalido (name 192 characters) (Roles Admin, author, contributor y editor)
+    Given I go to home screen
+    And I wait for 2 second
+    When I login with correct data
+    And I wait for 2 second
+    And I try to login
+    And I wait for 2 second
+    And I go to staff screen
+    And I wait for 2 second
+    And I press ghost user
+    And I wait for 2 second
+    And I try with name <char> and <role>
+    And I wait for 2 second
+    And I press save button
+    And I wait for 2 second
+    Then I expect to see button alert
+    And I wait for 2 second
+    Then I logout
+    And I wait for 2 second
+    
+
+Examples:
+
+| char | role | 
+| 195  | 0 |
+| 195  | 1 |
+| 195  | 2 |
+| 195  | 3 |

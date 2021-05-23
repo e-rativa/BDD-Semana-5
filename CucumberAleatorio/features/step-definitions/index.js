@@ -15,6 +15,7 @@ var faker = require('faker');
 var {
     Before
 } = require('cucumber');
+let nameMock = '';
 
 function getRandomInt(min, max) {
     min = Math.ceil(min);
@@ -82,7 +83,19 @@ Then('I erase the post', () => {
     publicarPost();
 });
 
-
+function generateEmail(charLength) {
+    let complement = '@test.com'
+    let randomLength = charLength - complement.length;
+    if (randomLength <= 0){
+        randomLength = 1;
+    }
+    let initString = faker.lorem.words(randomLength);
+    initString = initString.replace(/ /g, '');
+    initString = initString.slice(0, randomLength);
+    let endString = initString + complement;
+    // console.log(endString.length);
+    return endString;
+}
 
 function createPage(title, content) {
     const titleField = $('.gh-editor-title.ember-text-area.gh-input.ember-view');
@@ -99,7 +112,7 @@ function makeString(charLimit) {
     while (str.length < charLimit) {
         str = str + faker.lorem.paragraph();
     }
-    str = str.slice(0, charLimit)
+    str = str.slice(0, charLimit).trim()
     return str
 }
 
@@ -129,6 +142,121 @@ function cleanPage() {
     contentField.click();
     contentField.setValue('')
 }
+
+// Elkin Start
+Given('I go to home screen', () => {
+    browser.url('/ghost/#/signin');
+});
+
+Then('I go to staff screen', () => {
+    browser.url('/ghost/#/staff');
+});
+
+Then('I press invite people', () => {
+    $('.gh-btn=Invite people').waitForDisplayed(5000);
+    let button = $('.gh-btn=Invite people');
+    button.click();
+})
+
+Then('I press send button', () => {
+    $('.gh-btn=Send invitation now').waitForDisplayed(5000);
+    let button = $('.gh-btn=Send invitation now');
+    button.click();
+})
+
+Then('I press save button', () => {
+    $('button=Save').waitForDisplayed(5000);
+    let button = $('button=Save');
+    button.click();
+})
+
+Then('I press ghost user', () => {
+    $('.apps-card-app=Ghost').waitForDisplayed(5000);
+    let button = $('.apps-card-app=Ghost');
+    button.click();
+})
+
+Then('I press new ghost user', () => {
+    $('.apps-card-app=' + nameMock).waitForDisplayed(5000);
+    let button = $('.apps-card-app=' + nameMock);
+    button.click();
+})
+
+Then(/^I filled with email (.*) and (.*)$/, (char, role) => {
+    console.log('--------------------------------------------------------------------')
+    $('#new-user-email').waitForDisplayed(5000);
+    const inputElement = $('#new-user-email');
+    inputElement.click();
+    let emailMock = generateEmail(char)
+    inputElement.keys(emailMock);
+    browser.pause(1000);
+    const selectElement = $('#new-user-role');
+    selectElement.selectByIndex(role);
+    browser.pause(1000);
+
+})
+
+Then(/^I filled with empty email and (.*)$/, (role) => {
+    console.log('--------------------------------------------------------------------')
+    $('#new-user-email').waitForDisplayed(5000);
+    browser.pause(1000);
+    const selectElement = $('#new-user-role');
+    selectElement.selectByIndex(role);
+    browser.pause(1000);
+})
+
+Then(/^I try with empty name and (.*)$/, (role) => {
+    console.log('--------------------------------------------------------------------')
+    $('#user-name').waitForDisplayed(5000);
+    const nameElement = $('#user-name');
+    nameElement.click();
+    nameElement.setValue('');
+    nameElement.keys('');
+    browser.pause(1000);
+    const selectElement = $('#new-user-role');
+    selectElement.selectByIndex(role);
+    browser.pause(1000);
+})
+
+Then(/^I try with name (.*) and (.*)$/, (nameLength, role) => {
+    console.log('--------------------------------------------------------------------')
+    $('#user-name').waitForDisplayed(5000);
+    const nameElement = $('#user-name');
+    nameElement.click();
+    nameElement.setValue('');
+    nameMock = makeString(nameLength);
+    nameElement.keys(nameMock);
+    browser.pause(1000);
+    const selectElement = $('#new-user-role');
+    selectElement.selectByIndex(role);
+    browser.pause(1000);
+})
+
+Then('I filled ghost data', () => {
+    console.log('--------------------------------------------------------------------')
+    $('#user-name').waitForDisplayed(5000);
+    const nameElement = $('#user-name');
+    nameElement.click();
+    nameElement.setValue('');
+    nameElement.keys('Ghost');
+    browser.pause(1000);
+    const selectElement = $('#new-user-role');
+    selectElement.selectByIndex(2);
+    browser.pause(1000);
+})
+
+Then('I expect to see alert', () => {
+    $('.gh-alert.gh-alert-red').waitForDisplayed(5000);
+    browser.pause(1000);
+});
+
+Then('I expect to see button alert', () => {
+    $('.gh-btn-icon.gh-btn-red').waitForDisplayed(5000);
+    browser.pause(1000);
+});
+
+// Elkin End
+
 When(/^I fill with (.*) and (.*)$/, (email, password) => {
     $('input[id="ember8"]').waitForDisplayed(5000);
     const inputElement = $('input[id="ember8"]');
