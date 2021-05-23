@@ -407,7 +407,7 @@ Then('I select a random page',()=>{
     browser.url('/ghost/#/pages');
     $('.gh-list').waitForDisplayed(5000);
     const element=$('.gh-list')
-    const pages = element.$$('.gh-list-row.gh-posts-list-item')
+    const pages = element.$$('.gh-content-status-draft.gh-badge.gh-badge-purple.nowrap')
     lenPages = pages.length;
     randomPage = getRandomInt(0, lenPages);
     pages[randomPage].click()
