@@ -97,6 +97,8 @@ Examples:
     And I wait for 2 second
     Then I try to save config enable members
     And I wait for 2 second
+    Then I got to logout
+    And I wait for 2 second
 
 Scenario: Login - Logout
     Given I go to Ghost login
