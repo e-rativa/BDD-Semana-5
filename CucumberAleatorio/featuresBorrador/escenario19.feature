@@ -7,10 +7,10 @@ Scenario: Login - Habilitar miembros
     And I try to login
     And I wait for 2 second
     And I got to settings-labs
-    And I wait for 3 second
+    And I wait for 2 second
     Then I try to open to edit config enable members
-    And I wait for 3 second
+    And I wait for 2 second
     Then I try to edit config enable members
-    And I wait for 3 second
+    And I wait for 2 second
     Then I try to save config enable members
-    And I wait for 3 second
+    And I wait for 2 second

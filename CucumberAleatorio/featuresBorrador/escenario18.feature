@@ -26,7 +26,6 @@ Examples:
  |123456789|
  |!"##$$%%&&///(()=)(/&%$#"!|
  |1T2I3T4U5L6O789|
- |1t2i3t4u5l6o789|
  |!"1#2#35$6$7%8%90&'&¿087/5//T(I(U)T=U)L(O/&%$#"!|
  |Titulo con espacios asdfasfasasdfjnasldkfnmlaksdnflansdkjfbanlskdfbjnlaksjnrlipñwertjpñoweirjtkgndsfñgmnsdlkfmnglksdjfnglksjdnflgkjsndlkgjnsdflkgjnlsdfjngflsdjkgnlsdjfnglskdjfglksdjfnklglksdfjglksdjfnglksdjnfvlsdmnbñsdknfgñksndlfgkjnldkgjnsldkfjgnlskjdbfnlñjkgnñsdjfnglsjdnlgfkjnbdslakjgnsljdkanfgñsjknañfskjnañlfjnñsajnñsjanfñfsjandñdskjna{ñskjnsña|
  ||
