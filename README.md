@@ -237,7 +237,7 @@ Este comando se puede demorar si el número de imágenes es muy grande.
 
 ## Instalación Cucumber
 
-Para instalar si aún no lo tiene instalado el resembleJs desplazarse a la carpeta CucumberAleatorio con el comando 
+Para instalar si aún no lo tiene instalado el cucumber desplazarse a la carpeta CucumberAleatorio con el comando 
 
 ```bash
 cd CucumberAleatorio
@@ -254,7 +254,7 @@ Para correr las pruebas primero necesitamos 3 pasos:
 
 - Instalar una instancia del Ghost versión 3.42.5 (Si aún no la tiene instalada).
 - Configurar el Ghost para que permita más de 100 intentos.
-- Correr las pruebas de cucumber aletoreas
+- Correr las pruebas de cucumber aleatoreas
 
 ### 1. Instalar versión Ghost 3.42.5 
 
@@ -307,7 +307,7 @@ Y con la contraseña **qwerty1234**
 
 # 2. Configurar el ghost para evitar problemas con la sesión:
 
-En la carpeta donde previamente instalo el ghos dirijase al siguiente archivo y abralo en su editor de texto favorito.
+En la carpeta donde previamente instalo el ghost dirijase al siguiente archivo y abralo en su editor de texto favorito.
 
 ![Ghost-Config](./img/config.png) 
 
@@ -315,7 +315,7 @@ En dicho archivo encontrará la propiedad spam cambie todas las propiedades **"l
 
 ![Ghost-Spam](./img/spam.png) 
 
-# 3. Correr las pruebas de cucumber aletoreas:
+# 3. Correr las pruebas de cucumber aleatoreas:
 
 Para correr las pruebas de cucumber para las pruebas de datos y escenario aleatorios se accede a la carpeta **CucumberAleatorio** y correr el siguiente comando.
 
