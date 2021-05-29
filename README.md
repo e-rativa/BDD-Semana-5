@@ -33,7 +33,7 @@ http-server
 
 Luego ingrese en un navegador a la url [http://127.0.0.1:8080](http://127.0.0.1:8080).
 
-Donde cada carpeta que aparecen son cada una de las ejecusiones de los escenarios de **Kraken**
+Donde cada carpeta que aparecen son cada una de las ejecuciones de los escenarios de **Kraken**
 
 ![](img/reporte.gif)
 
