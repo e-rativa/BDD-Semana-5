@@ -1,7 +1,41 @@
 # Pruebas Automatizadas - Grupo 4-ywj
 ---
+# Semana 8 
+---
+**Para ver la información referente a como se realizaron las pruebas, en las estrategías y información adicional del proyecto por favor diríjase a la wiki.**
 
-VRT para entrega semana 6 calificada de pruebas automatizadas MISO.
+![](img/wiki.gif)
+
+
+## Ver reportes de kraken
+
+Para ver los reportes de kraken es encesario tener instalado **NodeJs** e instalar el siguiente paquete ejecutando este comando:
+
+
+```bash
+npm i http-server
+```
+
+Ahora descargue los reportes generados por **Kraken** en este [link](https://drive.google.com/drive/folders/1YaNVaxDF4ddG_X8tl_wWZMvsvKGoaLfa).
+
+Luego entre por consola en la carpeta donde realizo la descarga:
+
+```bash
+cd Descargar/${rutaCarpeta}
+```
+
+Luego corra el comando:
+
+```bash
+http-server
+```
+![](img/http.png)
+
+Luego ingrese en un navegador a la url [http://127.0.0.1:8080](http://127.0.0.1:8080).
+
+Donde cada carpeta que aparecen son cada una de las ejecusiones de los escenarios de **Kraken**
+
+![](img/reporte.gif)
 
 # Cypress VRT 
 
