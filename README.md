@@ -2,14 +2,14 @@
 ---
 # Semana 8 
 ---
-**Para ver la información referente a como se realizaron las pruebas, en las estrategías y información adicional del proyecto por favor diríjase a la wiki.**
+**Para ver la información referente a como se realizaron las pruebas, en las estrategías e información adicional del proyecto por favor diríjase a la wiki.**
 
 ![](img/wiki.gif)
 
 
 ## Ver reportes de kraken
 
-Para ver los reportes de kraken es encesario tener instalado **NodeJs** e instalar el siguiente paquete ejecutando este comando:
+Para ver los reportes de kraken es necesario tener instalado **NodeJs** e instalar el siguiente paquete ejecutando este comando:
 
 
 ```bash
@@ -18,7 +18,7 @@ npm i http-server
 
 Ahora descargue los reportes generados por **Kraken** en este [link](https://drive.google.com/drive/folders/1YaNVaxDF4ddG_X8tl_wWZMvsvKGoaLfa).
 
-Luego entre por consola en la carpeta donde realizo la descarga:
+Luego entre por consola en la carpeta donde realizó la descarga:
 
 ```bash
 cd Descargar/${rutaCarpeta}
